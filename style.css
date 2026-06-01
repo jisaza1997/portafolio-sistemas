@@ -463,6 +463,21 @@ nav a:hover::after, nav a.active::after {
     margin-bottom: 20px;
 }
 
+.profile-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--border-color);
+    background: var(--bg-primary);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: transform var(--transition-normal);
+}
+
+.profile-avatar:hover {
+    transform: scale(1.05);
+}
+
 .avatar-placeholder {
     width: 120px;
     height: 120px;

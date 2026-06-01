@@ -32,6 +32,7 @@ const translations = {
         skills_tools: "Herramientas & Analítica",
         
         exp_title: "Experiencia Profesional",
+        exp_view_certificate: "Ver Certificado Laboral",
         exp_kpmg_role: "Auditor de TI",
         exp_kpmg_desc: [
             "Auditoría de controles generales de TI (GITCs) incluyendo gestión de cambios, accesos lógicos y operaciones de TI bajo regulaciones SOX y PCAOB.",
@@ -151,6 +152,7 @@ const translations = {
         skills_tools: "Tools & Analytics",
         
         exp_title: "Work Experience",
+        exp_view_certificate: "View Work Certificate",
         exp_kpmg_role: "IT Auditor",
         exp_kpmg_desc: [
             "Auditing IT General Controls (GITCs) including change management, logical access, and IT operations under SOX and PCAOB regulations.",
