@@ -1,0 +1,596 @@
+[
+  {
+    "id": "degree_systems",
+    "title_es": "Ingeniero de Sistemas",
+    "title_en": "Systems Engineer",
+    "issuer": "Fundación Universitaria del Área Andina",
+    "date": "27 Feb 2025",
+    "category": "university",
+    "skills": [
+      "Software Engineering",
+      "Systems Architecture",
+      "Database Design",
+      "Project Management"
+    ],
+    "filename": "2728-AA-100205.pdf"
+  },
+  {
+    "id": "diplomado_cyber",
+    "title_es": "Diplomado en Operaciones de Ciberseguridad",
+    "title_en": "Diploma in Cybersecurity Operations",
+    "issuer": "Fundación Universitaria del Área Andina",
+    "date": "02 Oct 2024",
+    "category": "university",
+    "skills": [
+      "SOC Operations",
+      "Threat Intelligence",
+      "Incident Response",
+      "Network Security"
+    ],
+    "filename": "2728-AA-090413.pdf"
+  },
+  {
+    "id": "cisco_cyberops",
+    "title_es": "CyberOps Associate",
+    "title_en": "CyberOps Associate",
+    "issuer": "Cisco Networking Academy",
+    "date": "17 Jun 2024",
+    "category": "cisco",
+    "skills": [
+      "Security Monitoring",
+      "Host-based Analysis",
+      "Intrusion Analysis",
+      "Security Policies"
+    ],
+    "filename": "JulianIsaza-CyberOps Associa-certificate.pdf"
+  },
+  {
+    "id": "cisco_linux",
+    "title_es": "NDG Linux Unhatched",
+    "title_en": "NDG Linux Unhatched",
+    "issuer": "Cisco Networking Academy",
+    "date": "Completo",
+    "category": "cisco",
+    "skills": [
+      "Linux Command Line",
+      "System Administration",
+      "Open Source Basics"
+    ],
+    "filename": "JulianIsaza-linux unhatched -certificate.pdf"
+  },
+  {
+    "id": "iso_27001_lead",
+    "title_es": "ISO 27001:2022 Lead Auditor",
+    "title_en": "ISO 27001:2022 Lead Auditor",
+    "issuer": "Udemy (Dr. Amar Massoud)",
+    "date": "04 Jun 2025",
+    "category": "iso",
+    "skills": [
+      "Information Security Management (ISMS)",
+      "Lead Auditing",
+      "Risk Management",
+      "ISO 27001 Standards"
+    ],
+    "filename": "UC-4662d67c-5d40-40ad-9deb-a3a342360154.pdf"
+  },
+  {
+    "id": "iso_9001_auditor",
+    "title_es": "ISO 9001:2015 Quality Management System Auditor",
+    "title_en": "ISO 9001:2015 Quality Management System Auditor",
+    "issuer": "Udemy (Cristian Vlad Lupa, rigcert.education)",
+    "date": "04 Jun 2025",
+    "category": "iso",
+    "skills": [
+      "Quality Audits",
+      "Process Optimization",
+      "Quality Management Systems (QMS)",
+      "Continuous Improvement"
+    ],
+    "filename": "UC-168ec5db-2e08-4a20-98fb-a174df8051fc.pdf"
+  },
+  {
+    "id": "iso_14001_ems",
+    "title_es": "ISO 14001:2015. Environmental Management System",
+    "title_en": "ISO 14001:2015. Environmental Management System",
+    "issuer": "Udemy (Cristian Vlad Lupa, rigcert.education)",
+    "date": "04 Jun 2025",
+    "category": "iso",
+    "skills": [
+      "Environmental Compliance",
+      "EMS Auditing",
+      "Sustainability Controls"
+    ],
+    "filename": "UC-3c4ec21a-aec8-4964-b86a-79cf66c85762.pdf"
+  },
+  {
+    "id": "udemy_cisa_masterclass",
+    "title_es": "Masterclass - CISA Exam (Updated 2025)",
+    "title_en": "Masterclass - CISA Exam (Updated 2025)",
+    "issuer": "Udemy (Hemang Doshi)",
+    "date": "04 Jun 2025",
+    "category": "udemy",
+    "skills": [
+      "Information Systems Auditing",
+      "IT Governance",
+      "Systems Acquisition & Development",
+      "Information Asset Protection"
+    ],
+    "filename": "UC-659b18a4-1634-45c7-b80e-1d1d44480248.pdf"
+  },
+  {
+    "id": "udemy_it_audit_complete",
+    "title_es": "IT Audit Complete Course",
+    "title_en": "IT Audit Complete Course",
+    "issuer": "Udemy (Alexander Shafe)",
+    "date": "03 Jun 2025",
+    "category": "udemy",
+    "skills": [
+      "IT Controls Frameworks",
+      "General IT Controls (GITCs)",
+      "Application Controls",
+      "Infrastructure Auditing"
+    ],
+    "filename": "UC-acc364c9-fc5c-466c-9fa3-04a9a8f4b105.pdf"
+  },
+  {
+    "id": "udemy_it_audit_cloud",
+    "title_es": "IT Audit: Cloud Audit Fundamentals - AWS, Azure, GCP",
+    "title_en": "IT Audit: Cloud Audit Fundamentals - AWS, Azure, GCP",
+    "issuer": "Udemy (Alexander Shafe)",
+    "date": "03 Jun 2025",
+    "category": "udemy",
+    "skills": [
+      "Cloud Security Controls",
+      "AWS Audit",
+      "Azure Compliance",
+      "Google Cloud Security"
+    ],
+    "filename": "UC-1b5c7653-a65e-456b-bcf0-581130f70979.pdf"
+  },
+  {
+    "id": "udemy_it_audit_fundamentals",
+    "title_es": "IT Audit Fundamentals | Introduction to Controls",
+    "title_en": "IT Audit Fundamentals | Introduction to Controls",
+    "issuer": "Udemy (Peju Adedeji - CISA, CISM, CFE, PMP)",
+    "date": "03 Jun 2025",
+    "category": "udemy",
+    "skills": [
+      "Risk Identification",
+      "IT Control Categories",
+      "Audit Testing"
+    ],
+    "filename": "UC-c90517ba-965a-43b3-b2f6-07f09c82e720.pdf"
+  },
+  {
+    "id": "kpmg_role_it_auditor",
+    "title_es": "El Rol de un Auditor de TI",
+    "title_en": "The Role of an IT Auditor",
+    "issuer": "KPMG SuccessFactors Learning",
+    "date": "07 Mar 2024",
+    "category": "kpmg",
+    "skills": [
+      "IT Audit Methodology",
+      "Professional Ethics",
+      "Working Paper Documentation"
+    ],
+    "filename": "SuccessFactors Learning_ Content Player for CO – Role of an IT Auditor.pdf"
+  },
+  {
+    "id": "kpmg_it_layers",
+    "title_es": "Introducción a la Comprensión de TI y las Capas de Tecnología",
+    "title_en": "Introduction to IT Understanding and Layers of Technology",
+    "issuer": "KPMG SuccessFactors Learning",
+    "date": "08 Mar 2024",
+    "category": "kpmg",
+    "skills": [
+      "Operating System Auditing",
+      "Database Security Layers",
+      "Network Infrastructure Controls"
+    ],
+    "filename": "SuccessFactors Learning_ Content Player for GX_Introduction to IT understanding and layers of technology.pdf"
+  },
+  {
+    "id": "kpmg_sec_update",
+    "title_es": "Actualización SEC (Comisión de Bolsa y Valores)",
+    "title_en": "SEC Update",
+    "issuer": "KPMG SuccessFactors Learning / Executive Board",
+    "date": "05 Dec 2023",
+    "category": "kpmg",
+    "skills": [
+      "SEC Regulatory Filings",
+      "Internal Controls over Financial Reporting (ICFR)",
+      "SOX Compliance Updates"
+    ],
+    "filename": "SuccessFactors Learning_ Content Player for GX_SEC Update 2023.pdf"
+  },
+  {
+    "id": "kpmg_risk_assessment_mod2",
+    "title_es": "Módulo 2: Consideraciones de Evaluación de Riesgos (ICFR)",
+    "title_en": "Module 2: Risk Assessment Considerations in ICFR",
+    "issuer": "KPMG SuccessFactors Learning",
+    "date": "16 Jul 2023",
+    "category": "kpmg",
+    "skills": [
+      "Risk Assessment",
+      "Materiality Scoping",
+      "Inherent Risk Identification"
+    ],
+    "filename": "52_GUSS_ICFR_Mod2_ESP.pdf"
+  },
+  {
+    "id": "kpmg_understand_process_mod3",
+    "title_es": "Módulo 3: Entender el Proceso (ICFR)",
+    "title_en": "Module 3: Understanding the Process in ICFR",
+    "issuer": "KPMG SuccessFactors Learning",
+    "date": "16 Jul 2023",
+    "category": "kpmg",
+    "skills": [
+      "Process Flowcharting",
+      "Walkthrough Documentation",
+      "Transaction Lifecycle"
+    ],
+    "filename": "ICFRBasics_Module3_Script_ESP.pdf"
+  },
+  {
+    "id": "kpmg_control_activities_mod4",
+    "title_es": "Módulo 4: Evaluación de Actividades de Control (ICFR)",
+    "title_en": "Module 4: Evaluating Control Activities in ICFR",
+    "issuer": "KPMG SuccessFactors Learning",
+    "date": "16 Jul 2023",
+    "category": "kpmg",
+    "skills": [
+      "Key Controls Testing",
+      "Segregation of Duties (SoD)",
+      "Control Design Assessment"
+    ],
+    "filename": "IFRBasics_Module4_ESP.pdf"
+  },
+  {
+    "id": "kpmg_deficiency_mod5",
+    "title_es": "Módulo 5: Evaluación de Deficiencias de Control (ICFR)",
+    "title_en": "Module 5: Evaluating Control Deficiencies in ICFR",
+    "issuer": "KPMG SuccessFactors Learning",
+    "date": "16 Jul 2023",
+    "category": "kpmg",
+    "skills": [
+      "Deficiency Classification",
+      "Compensating Controls",
+      "Reporting Findings"
+    ],
+    "filename": "ICFRBasics_Module5_Script_ESP.pdf"
+  },
+  {
+    "id": "kpmg_aicpa_baseline",
+    "title_es": "Normas de Auditoría AICPA - Baseline",
+    "title_en": "AICPA Auditing Standards - Baseline",
+    "issuer": "KPMG SuccessFactors Learning / AICPA",
+    "date": "21 Nov 2023",
+    "category": "kpmg",
+    "skills": [
+      "Generally Accepted Auditing Standards (GAAS)",
+      "AICPA Guidelines",
+      "Audit Quality Controls"
+    ],
+    "filename": "SuccessFactors Learning_ Content Player for CO - AICPA Auditing Standards Baseline - E-learning.pdf"
+  },
+  {
+    "id": "kpmg_pcaob_baseline",
+    "title_es": "Normas de Auditoría PCAOB - Baseline",
+    "title_en": "PCAOB Auditing Standards - Baseline",
+    "issuer": "KPMG SuccessFactors Learning / PCAOB",
+    "date": "14 Jul 2023",
+    "category": "kpmg",
+    "skills": [
+      "PCAOB Standards",
+      "Public Company Audits",
+      "Integrated Audits",
+      "Audit Report Disclosures"
+    ],
+    "filename": "PCAOB_AS_Script_ESP.pdf"
+  },
+  {
+    "id": "kpmg_group_audits",
+    "title_es": "Introducción a Auditorías de Grupo",
+    "title_en": "Introduction to Group Audits",
+    "issuer": "KPMG SuccessFactors Learning",
+    "date": "22 Apr 2024",
+    "category": "kpmg",
+    "skills": [
+      "Multi-component Audits",
+      "Component Auditor Coordination",
+      "Consolidation Controls"
+    ],
+    "filename": "SuccessFactors Learning_ Content Player for CO - Group Audits.pdf"
+  },
+  {
+    "id": "kpmg_esg_foundations",
+    "title_es": "ASG 101: Tiempo de Impactar (Fundamentos ESG)",
+    "title_en": "ESG 101: Foundations & Time for Impact",
+    "issuer": "KPMG SuccessFactors Learning",
+    "date": "08 Mar 2024",
+    "category": "kpmg",
+    "skills": [
+      "Environmental, Social & Governance",
+      "Sustainability Disclosures",
+      "ESG Audit Frameworks"
+    ],
+    "filename": "SuccessFactors Learning_ Content Player for CO -ESG 101- Foundations_ Time for Impact.pdf"
+  },
+  {
+    "id": "kpmg_anti_bribery",
+    "title_es": "CO - Prevención del Soborno y la Corrupción",
+    "title_en": "CO - Anti-Bribery and Corruption Compliance",
+    "issuer": "KPMG Risk Management",
+    "date": "24 Nov 2023",
+    "category": "kpmg",
+    "skills": [
+      "Regulatory Compliance",
+      "Anti-Bribery Frameworks",
+      "Corporate Ethics"
+    ],
+    "filename": "CertificateOfCompletion (1).pdf"
+  },
+  {
+    "id": "kpmg_sagrilaft_ptee",
+    "title_es": "CO - SAGRILAFT & Programa de Transparencia y Ética Empresarial (PTEE)",
+    "title_en": "CO - SAGRILAFT & Corporate Ethics & Transparency Program (PTEE)",
+    "issuer": "KPMG Compliance Colombia",
+    "date": "13 Oct 2023",
+    "category": "kpmg",
+    "skills": [
+      "Anti-Money Laundering (LA/FT)",
+      "PTEE Program Controls",
+      "Compliance Monitoring"
+    ],
+    "filename": "CertificateOfCompletion.pdf"
+  },
+  {
+    "id": "kpmg_clara_workflow",
+    "title_es": "Flujo de Trabajo KPMG Clara: Diferencias US/Internacionales (Auditoría TI)",
+    "title_en": "KPMG Clara Workflow: US/International Differences Baseline (IT Audit)",
+    "issuer": "KPMG Global Quality & Risk Management",
+    "date": "02 Jan 2024",
+    "category": "kpmg",
+    "skills": [
+      "KPMG Clara Auditing System",
+      "Cross-border IT controls",
+      "IT Audit Execution"
+    ],
+    "filename": "CertificateOfCompletion2.pdf"
+  },
+  {
+    "id": "kpmg_information_protection",
+    "title_es": "Fundamentos de Protección de la Información y Privacidad de Datos",
+    "title_en": "Information Protection & Data Privacy Fundamentals",
+    "issuer": "KPMG Global Quality & Risk Management",
+    "date": "07 Mar 2024",
+    "category": "kpmg",
+    "skills": [
+      "Data Protection (GDPR/Local Laws)",
+      "Information Classification",
+      "Secure File Handling"
+    ],
+    "filename": "CertificateOfCompletion1.pdf"
+  },
+  {
+    "id": "kpmg_service_orgs",
+    "title_es": "Organizaciones de Servicios para Asistentes Experimentados (SOC 1 / SOC 2)",
+    "title_en": "Service Organizations for Experienced Associates (SOC Reporting)",
+    "issuer": "KPMG SuccessFactors Learning",
+    "date": "22 Apr 2024",
+    "category": "kpmg",
+    "skills": [
+      "SOC 1 & SOC 2 Auditing",
+      "User Entity Controls",
+      "Service Organization Controls Evaluation"
+    ],
+    "filename": "SuccessFactors Learning_ Content Player for GX_Service organizations for experienced associates.pdf"
+  },
+  {
+    "id": "kpmg_project_management",
+    "title_es": "Esenciales del Plan del Proyecto",
+    "title_en": "Project Plan Essentials",
+    "issuer": "KPMG SuccessFactors Learning",
+    "date": "Completo",
+    "category": "kpmg",
+    "skills": [
+      "Project Scheduling",
+      "Milestone Tracking",
+      "Resource Allocation"
+    ],
+    "filename": "SuccessFactors Learning_ Content Player for GX_Project Plan Essentials.pdf"
+  },
+  {
+    "id": "kpmg_ceramic",
+    "title_es": "Introducción a CERAMIC (Cultura y Valores KPMG)",
+    "title_en": "Introduction to CERAMIC (KPMG Core Values & Quality)",
+    "issuer": "KPMG SuccessFactors Learning",
+    "date": "07 Mar 2024",
+    "category": "kpmg",
+    "skills": [
+      "Professional Skepticism",
+      "Quality Controls",
+      "Ethics Compliance"
+    ],
+    "filename": "SuccessFactors Learning_ Content Player for GX_Introduction to CERAMIC.pdf"
+  },
+  {
+    "id": "kpmg_core_audit_module_27",
+    "title_es": "Módulo de Auditoría KPMG",
+    "title_en": "KPMG Core Audit Module",
+    "issuer": "KPMG SuccessFactors Learning",
+    "date": "6/12/2022",
+    "category": "kpmg",
+    "skills": [
+      "IT Auditing",
+      "Internal Controls",
+      "Risk Assessment"
+    ],
+    "filename": "51_SpecialistsSTM_Part1.pdf"
+  },
+  {
+    "id": "aicpa_as_baseline_locked_esp_32",
+    "title_es": "Aicpa As Baseline Locked Esp",
+    "title_en": "Aicpa As Baseline Locked Esp",
+    "issuer": "Educación Continua",
+    "date": "Completo",
+    "category": "university",
+    "skills": [
+      "Databases",
+      "SQL Queries",
+      "Data Integrity"
+    ],
+    "filename": "AICPA_AS_Baseline_Locked_ESP.pdf"
+  },
+  {
+    "id": "certificateofcompletion_2_31",
+    "title_es": "Certificateofcompletion (2)",
+    "title_en": "Certificateofcompletion (2)",
+    "issuer": "Educación Continua",
+    "date": "Completo",
+    "category": "university",
+    "skills": [
+      "Technical Training",
+      "Process Compliance"
+    ],
+    "filename": "CertificateOfCompletion (2).pdf"
+  },
+  {
+    "id": "kpmg_core_audit_module_168",
+    "title_es": "Módulo de Auditoría KPMG",
+    "title_en": "KPMG Core Audit Module",
+    "issuer": "KPMG SuccessFactors Learning",
+    "date": "Completo",
+    "category": "kpmg",
+    "skills": [
+      "IT Auditing",
+      "Internal Controls",
+      "Risk Assessment"
+    ],
+    "filename": "cqs.globalrisk.kworld.kpmg.com_CQS_Workbench_RespondentCertificate_instanceId=021d842e-1fa9-46c8-8152-3a84c124e657&respondentId=1e86348c-2294-466d-97f4-2eb28656d549.pdf"
+  },
+  {
+    "id": "ethical_hacker_badge20240926_7_41",
+    "title_es": "Ethical Hacker Badge20240926 7 A7Qhe6",
+    "title_en": "Ethical Hacker Badge20240926 7 A7Qhe6",
+    "issuer": "Educación Continua",
+    "date": "Completo",
+    "category": "university",
+    "skills": [
+      "Technical Training",
+      "Process Compliance"
+    ],
+    "filename": "Ethical_Hacker_Badge20240926-7-a7qhe6.pdf"
+  },
+  {
+    "id": "kpmg_core_audit_module_57",
+    "title_es": "Módulo de Auditoría KPMG",
+    "title_en": "KPMG Core Audit Module",
+    "issuer": "KPMG SuccessFactors Learning",
+    "date": "13/3/2023",
+    "category": "kpmg",
+    "skills": [
+      "IT Auditing",
+      "Internal Controls",
+      "Risk Assessment"
+    ],
+    "filename": "Introducción a la comprensión de TI y las capas de TI.pdf"
+  },
+  {
+    "id": "julin_andrs_isaza_arias_certif_56",
+    "title_es": "Julián Andrés Isaza Arias Certificados De Asistencia",
+    "title_en": "Julián Andrés Isaza Arias Certificados De Asistencia",
+    "issuer": "Educación Continua",
+    "date": "Completo",
+    "category": "university",
+    "skills": [
+      "Technical Training",
+      "Process Compliance"
+    ],
+    "filename": "Julián Andrés Isaza Arias certificados de asistencia.pdf"
+  },
+  {
+    "id": "data_privacy_course_2022_19",
+    "title_es": "Data Privacy course 2022",
+    "title_en": "Data Privacy course 2022",
+    "issuer": "KPMG SuccessFactors Learning",
+    "date": "6/12/2022",
+    "category": "kpmg",
+    "skills": [
+      "Databases",
+      "SQL Queries",
+      "Data Integrity"
+    ],
+    "filename": "KPMG DP GLMS 22.pdf"
+  },
+  {
+    "id": "kpmg_core_audit_module_23",
+    "title_es": "Módulo de Auditoría KPMG",
+    "title_en": "KPMG Core Audit Module",
+    "issuer": "KPMG SuccessFactors Learning",
+    "date": "6/12/2022",
+    "category": "kpmg",
+    "skills": [
+      "IT Auditing",
+      "Internal Controls",
+      "Risk Assessment"
+    ],
+    "filename": "KPMG IPF Spanish v5.pdf"
+  },
+  {
+    "id": "kpmg_core_audit_module_9",
+    "title_es": "Módulo de Auditoría KPMG",
+    "title_en": "KPMG Core Audit Module",
+    "issuer": "KPMG SuccessFactors Learning",
+    "date": "Completo",
+    "category": "kpmg",
+    "skills": [
+      "IT Auditing",
+      "Internal Controls",
+      "Risk Assessment"
+    ],
+    "filename": "PCAOB.pdf"
+  },
+  {
+    "id": "sec_baseline_script_23",
+    "title_es": "Sec Baseline Script",
+    "title_en": "Sec Baseline Script",
+    "issuer": "Educación Continua",
+    "date": "Completo",
+    "category": "university",
+    "skills": [
+      "Databases",
+      "SQL Queries",
+      "Data Integrity"
+    ],
+    "filename": "SEC_Baseline_Script.pdf"
+  },
+  {
+    "id": "kpmg_core_audit_module_24",
+    "title_es": "Módulo de Auditoría KPMG",
+    "title_en": "KPMG Core Audit Module",
+    "issuer": "KPMG SuccessFactors Learning",
+    "date": "6/12/2022",
+    "category": "kpmg",
+    "skills": [
+      "IT Auditing",
+      "Internal Controls",
+      "Risk Assessment"
+    ],
+    "filename": "SpecialistsSTM_Part2.pdf"
+  },
+  {
+    "id": "successfactors_learning__conte_76",
+    "title_es": "Successfactors Learning  Content Player For Gx Usas 2023 It Audit Update",
+    "title_en": "Successfactors Learning  Content Player For Gx Usas 2023 It Audit Update",
+    "issuer": "Educación Continua",
+    "date": "Completo",
+    "category": "university",
+    "skills": [
+      "IT Auditing",
+      "Internal Controls",
+      "Risk Assessment"
+    ],
+    "filename": "SuccessFactors Learning_ Content Player for GX_USAS 2023 IT Audit update.pdf"
+  }
+]

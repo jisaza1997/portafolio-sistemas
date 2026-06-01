@@ -1,0 +1,22 @@
+# OS files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
+
+# IDE and Editors
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Project files
+.vercel/
+*.log
+*.tmp
+node_modules/
+dist/
+build/
