@@ -1,22 +1,17 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+ENV/
+
 # OS files
 Thumbs.db
-ehthumbs.db
-Desktop.ini
+db
 .DS_Store
 
-# IDE and Editors
-.vscode/
-.idea/
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
-
-# Project files
-.vercel/
-*.log
+# Temporary files
 *.tmp
-node_modules/
-dist/
-build/
+*.log
+.gemini/

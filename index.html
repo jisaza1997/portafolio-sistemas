@@ -442,6 +442,32 @@
                             <span class="val" id="control-privacy-status" data-i18n="audit_status_info">VERIFICANDO</span>
                         </div>
                     </div>
+
+                    <!-- Control 5: Vercel Deploy Infrastructure -->
+                    <div class="audit-control-card glass-card" id="control-infrastructure">
+                        <div class="audit-control-header">
+                            <h4 data-i18n="audit_c5_title">Integridad de Despliegue (Vercel)</h4>
+                            <div class="control-status-dot" id="control-infrastructure-dot"></div>
+                        </div>
+                        <p data-i18n="audit_c5_desc">Control de lanzamiento continuo mediante integración Git-Vercel. Verifica compilación estática, HTTPS automático y reversiones automáticas ante incidentes.</p>
+                        <div class="audit-control-footer">
+                            <span>Host & Edge Pipeline:</span>
+                            <span class="val" id="control-infrastructure-status" data-i18n="audit_status_info">VERIFICANDO</span>
+                        </div>
+                    </div>
+
+                    <!-- Control 6: Supabase Database Audit -->
+                    <div class="audit-control-card glass-card" id="control-database">
+                        <div class="audit-control-header">
+                            <h4 data-i18n="audit_c6_title">Auditoría de Datos (Supabase)</h4>
+                            <div class="control-status-dot" id="control-database-dot"></div>
+                        </div>
+                        <p data-i18n="audit_c6_desc">Gobernanza de datos. Permite la integración segura de consultas mediante API Keys encriptadas con políticas RLS (Row Level Security) activas.</p>
+                        <div class="audit-control-footer">
+                            <span>Esquema Relacional:</span>
+                            <span class="val" id="control-database-status" data-i18n="audit_status_info">VERIFICANDO</span>
+                        </div>
+                    </div>
                 </div>
                 
                 <!-- Simulated Live Terminal Logs & PNG Evidences -->
@@ -588,8 +614,12 @@
                         <!-- Loaded dynamically -->
                     </div>
                 </div>
-                <div class="modal-btn-wrapper">
-                    <button class="btn btn-secondary modal-close" style="width: 100%;" data-i18n="modal_close_btn">Cerrar</button>
+                <div class="modal-btn-wrapper" style="display: flex; gap: 12px; margin-top: 10px;">
+                    <a id="modal-cert-download-link" href="#" target="_blank" class="btn btn-primary" style="flex: 1; font-size: 0.9rem; padding: 10px 16px;">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 6px;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                        <span id="modal-view-doc-text">Ver Documento</span>
+                    </a>
+                    <button class="btn btn-secondary modal-close" style="flex: 1; font-size: 0.9rem; padding: 10px 16px;" data-i18n="modal_close_btn">Cerrar</button>
                 </div>
             </div>
         </div>

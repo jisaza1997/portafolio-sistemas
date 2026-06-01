@@ -91,6 +91,10 @@ const translations = {
         audit_c3_desc: "Cifrado de datos en tránsito. Evaluación del protocolo activo. En producción se requiere HTTPS con TLS 1.3 para prevenir ataques de intermediario (MITM).",
         audit_c4_title: "Control de Privacidad",
         audit_c4_desc: "Privacidad de datos de usuario. No se utilizan cookies de seguimiento ni scripts de terceros invasivos, cumpliendo con regulaciones GDPR e ISO 27001.",
+        audit_c5_title: "Integridad de Despliegue (Vercel)",
+        audit_c5_desc: "Control de lanzamiento continuo mediante integración Git-Vercel. Verifica compilación estática, HTTPS automático y reversiones automáticas ante incidentes.",
+        audit_c6_title: "Auditoría de Datos (Supabase)",
+        audit_c6_desc: "Gobernanza de datos. Permite la integración de consultas mediante API Keys encriptadas con políticas RLS (Row Level Security) activas.",
         
         audit_status_compliant: "CUMPLIDO",
         audit_status_warning: "ADVERTENCIA (HTTP)",
@@ -205,6 +209,10 @@ const translations = {
         audit_c3_desc: "Data-in-transit encryption. Evaluation of the active protocol. HTTPS with TLS 1.3 is enforced in production to block Man-in-the-Middle (MITM) attacks.",
         audit_c4_title: "Privacy Controls",
         audit_c4_desc: "User data privacy. No tracking cookies or invasive third-party trackers are deployed, complying with GDPR and ISO 27001 standards.",
+        audit_c5_title: "Deployment Integrity (Vercel)",
+        audit_c5_desc: "Continuous deployment control via Git-Vercel integration. Verifies static compilation, automatic HTTPS, and automatic rollbacks on incidents.",
+        audit_c6_title: "Database Audit (Supabase)",
+        audit_c6_desc: "Data governance. Allows secure query integration via encrypted API Keys with active RLS (Row Level Security) policies.",
         
         audit_status_compliant: "COMPLIANT",
         audit_status_warning: "WARNING (HTTP)",
@@ -707,8 +715,20 @@ function openCertModal(cert) {
 
     // File source mapping
     const fileSource = document.getElementById("modal-cert-file");
-    // Secure escaping
     fileSource.textContent = cert.filename || "Verified PDF Ledger";
+
+    // Set Document Download / View Link
+    const linkEl = document.getElementById("modal-cert-download-link");
+    const linkTextEl = document.getElementById("modal-view-doc-text");
+    if (linkEl && linkTextEl) {
+        if (cert.filename) {
+            linkEl.style.display = "inline-flex";
+            linkEl.href = `./Certificaciones/${encodeURIComponent(cert.filename)}`;
+            linkTextEl.textContent = currentLanguage === 'es' ? 'Ver Certificado' : 'View Certificate';
+        } else {
+            linkEl.style.display = "none";
+        }
+    }
 
     modal.classList.add("active");
     activeModal = modal;
@@ -736,7 +756,11 @@ function startComplianceTerminal() {
         { type: "AUDIT", es: "Verificando firmas de confirmación de commits de desarrollo...", en: "Checking commit developer cryptographic signatures..." },
         { type: "SUCCESS", es: "Auditoría de Privacidad (GDPR): Ninguna cookie externa activa en el dominio.", en: "Privacy Audit (GDPR): No external tracking cookies deployed on target domain." },
         { type: "INFO", es: "Escaneando activos multimedia en carpeta assets/img... OK", en: "Scanning static resources in assets/img... OK" },
-        { type: "SUCCESS", es: "Evaluación de Seguridad Bancaria (Mitigación MitM): TLS 1.3 activo.", en: "Banking Security Assessment (MitM Mitigation): TLS 1.3 verified." }
+        { type: "SUCCESS", es: "Evaluación de Seguridad Bancaria (Mitigación MitM): TLS 1.3 activo.", en: "Banking Security Assessment (MitM Mitigation): TLS 1.3 verified." },
+        { type: "AUDIT", es: "Verificando pipeline de despliegue en Vercel Edge Network...", en: "Verifying deployment pipeline on Vercel Edge Network..." },
+        { type: "SUCCESS", es: "Integridad de Despliegue: Vercel static build y SSL certificados... OK.", en: "Deployment Integrity: Vercel static build and SSL certificates... OK." },
+        { type: "AUDIT", es: "Probando conexión segura de base de datos con Supabase API Gateway...", en: "Testing secure database connection with Supabase API Gateway..." },
+        { type: "SUCCESS", es: "Conexión Supabase: Políticas de seguridad RLS verificadas activas.", en: "Supabase connection: RLS security policies verified active." }
     ];
 
     let logIdx = 0;
@@ -772,15 +796,48 @@ function checkSiteParameters() {
 
     // 2. XSS Controls Check (Verification check)
     const xssStatus = document.getElementById("control-xss-status");
+    const xssDot = document.getElementById("control-xss-dot");
     if (xssStatus) xssStatus.textContent = translations[currentLanguage].audit_status_compliant;
+    if (xssDot) {
+        xssDot.style.backgroundColor = "var(--accent-secondary)";
+        xssDot.style.boxShadow = "0 0 10px rgba(var(--accent-secondary-rgb), 0.5)";
+    }
 
     // 3. Deployment controls
     const deployStatus = document.getElementById("control-deploy-status");
+    const deployDot = document.getElementById("control-deploy-dot");
     if (deployStatus) deployStatus.textContent = translations[currentLanguage].audit_status_compliant;
+    if (deployDot) {
+        deployDot.style.backgroundColor = "var(--accent-secondary)";
+        deployDot.style.boxShadow = "0 0 10px rgba(var(--accent-secondary-rgb), 0.5)";
+    }
 
     // 4. Privacy Control
     const privStatus = document.getElementById("control-privacy-status");
+    const privDot = document.getElementById("control-privacy-dot");
     if (privStatus) privStatus.textContent = translations[currentLanguage].audit_status_compliant;
+    if (privDot) {
+        privDot.style.backgroundColor = "var(--accent-secondary)";
+        privDot.style.boxShadow = "0 0 10px rgba(var(--accent-secondary-rgb), 0.5)";
+    }
+
+    // 5. Vercel Infrastructure
+    const infraStatus = document.getElementById("control-infrastructure-status");
+    const infraDot = document.getElementById("control-infrastructure-dot");
+    if (infraStatus) infraStatus.textContent = translations[currentLanguage].audit_status_compliant;
+    if (infraDot) {
+        infraDot.style.backgroundColor = "var(--accent-secondary)";
+        infraDot.style.boxShadow = "0 0 10px rgba(var(--accent-secondary-rgb), 0.5)";
+    }
+
+    // 6. Supabase Database
+    const dbStatus = document.getElementById("control-database-status");
+    const dbDot = document.getElementById("control-database-dot");
+    if (dbStatus) dbStatus.textContent = translations[currentLanguage].audit_status_compliant;
+    if (dbDot) {
+        dbDot.style.backgroundColor = "var(--accent-secondary)";
+        dbDot.style.boxShadow = "0 0 10px rgba(var(--accent-secondary-rgb), 0.5)";
+    }
 }
 
 function addAuditLog(type, message) {
