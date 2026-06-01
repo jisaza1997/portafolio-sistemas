@@ -76,6 +76,7 @@ const translations = {
         certs_filter_kpmg: "Auditoría TI (KPMG)",
         certs_filter_coursera: "Coursera",
         certs_filter_udemy: "Udemy / Cursos",
+        certs_stats_title: "Distribución de Credenciales por Categoría",
         certs_view_btn: "Ver Detalles",
         certs_skills_label: "Habilidades cubiertas",
         certs_file_label: "Evidencia de Archivo",
@@ -194,6 +195,7 @@ const translations = {
         certs_filter_kpmg: "IT Audit (KPMG)",
         certs_filter_coursera: "Coursera",
         certs_filter_udemy: "Udemy / Courses",
+        certs_stats_title: "Credentials Distribution by Category",
         certs_view_btn: "View Details",
         certs_skills_label: "Skills covered",
         certs_file_label: "Evidence File",
@@ -358,6 +360,7 @@ function updatePageLanguage() {
     
     // Re-render Certifications with updated language
     renderCertifications();
+    renderCertificationsChart();
 }
 
 // Typing Animation
@@ -569,6 +572,7 @@ async function loadCertifications() {
         if (certsCountEl) certsCountEl.textContent = certificationsData.length;
         
         renderCertifications();
+        renderCertificationsChart();
         initCertFilters();
     } catch (err) {
         addAuditLog("DATA_ERROR", `Could not load certifications registry: ${err.message}`);
@@ -624,6 +628,67 @@ function renderCertifications(filter = 'all', searchQuery = '') {
 
         grid.appendChild(card);
     });
+}
+
+function renderCertificationsChart() {
+    const container = document.getElementById("certs-chart-container");
+    if (!container) return;
+    container.innerHTML = "";
+
+    // Count categories
+    const counts = {
+        university: 0,
+        iso: 0,
+        cisco: 0,
+        kpmg: 0,
+        coursera: 0,
+        udemy: 0
+    };
+
+    certificationsData.forEach(cert => {
+        if (counts.hasOwnProperty(cert.category)) {
+            counts[cert.category]++;
+        }
+    });
+
+    const categories = [
+        { key: "university", color: "var(--text-primary)" },
+        { key: "iso", color: "var(--accent-primary)" },
+        { key: "cisco", color: "var(--accent-tertiary)" },
+        { key: "kpmg", color: "var(--accent-secondary)" },
+        { key: "coursera", color: "#3b82f6" },
+        { key: "udemy", color: "var(--accent-warning)" }
+    ];
+
+    const maxCount = Math.max(...Object.values(counts)) || 1;
+
+    categories.forEach(cat => {
+        const count = counts[cat.key];
+        const percent = (count / maxCount) * 100;
+        const displayName = translations[currentLanguage]["certs_filter_" + cat.key];
+
+        const barWrapper = document.createElement("div");
+        barWrapper.className = "chart-bar-wrapper";
+        barWrapper.style = "display: flex; flex-direction: column; gap: 8px;";
+
+        barWrapper.innerHTML = `
+            <div style="display: flex; justify-content: space-between; font-size: 0.85rem; font-weight: 600;">
+                <span style="color: var(--text-secondary);">${displayName}</span>
+                <span style="color: ${cat.color}; font-weight: 700;">${count}</span>
+            </div>
+            <div style="width: 100%; height: 8px; background: rgba(255, 255, 255, 0.05); border-radius: 4px; overflow: hidden; border: 1px solid var(--border-color);">
+                <div style="width: 0%; height: 100%; background: ${cat.color}; border-radius: 4px; transition: width 1s ease-out;" class="chart-progress-bar" data-percent="${percent}"></div>
+            </div>
+        `;
+        container.appendChild(barWrapper);
+    });
+
+    // Trigger transitions after render (in microtask queue)
+    setTimeout(() => {
+        container.querySelectorAll(".chart-progress-bar").forEach(bar => {
+            bar.style.width = bar.getAttribute("data-percent") + "%";
+        });
+    }, 100);
 }
 
 // Initialize search and filter buttons
