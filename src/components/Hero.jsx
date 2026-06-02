@@ -51,21 +51,22 @@ export default function Hero({ lang, t }) {
   }, [charIndex, isDeleting, roleIndex, lang, typingSpeed])
 
   return (
-    <section className="hero" id="home">
-      <div className="hero-glow-1"></div>
-      <div className="hero-glow-2"></div>
+    <section id="hero">
+      <div className="hero-bg-animations">
+        <div className="hero-glow-1"></div>
+        <div className="hero-glow-2"></div>
+      </div>
       
       <div className="container">
         <div className="hero-content">
           <h3 data-i18n="hero_greet">{t('hero_greet')}</h3>
           <h1 className="text-gradient-cyan">Julián Andrés Isaza Arias</h1>
-          <div className="subtitle-typing">
-            <span id="typing-text">{typedText}</span>
-            <span className="typed-cursor">|</span>
+          <div className="subtitle-typing" id="typing-text">
+            {typedText}
           </div>
           <p data-i18n="hero_desc">{t('hero_desc')}</p>
           <div className="hero-cta">
-            <a href="#projects" className="btn btn-primary" id="cta-view-portfolio">{t('hero_cta_portfolio')}</a>
+            <a href="#github-section" className="btn btn-primary" id="cta-view-portfolio">{t('hero_cta_portfolio')}</a>
             <a href="#contact" className="btn btn-secondary" id="cta-contact-me">{t('hero_cta_contact')}</a>
           </div>
         </div>

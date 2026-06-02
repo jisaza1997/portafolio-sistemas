@@ -4,8 +4,8 @@ import json
 import pypdf
 
 # Config paths
-certs_dir = r"Certificaciones"
-json_path = "certifications.json"
+certs_dir = r"public/Certificaciones"
+json_path = "public/certifications.json"
 
 def clean_spacing(text):
     return " ".join(text.split())

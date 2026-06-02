@@ -21,11 +21,11 @@ export default function Skills({ t }) {
             </div>
             <h3>{t('skills_backend')}</h3>
             <div className="skills-list">
-              <div className="skill-tag"><span>Python / Go / Java</span> <span className="level">{lang => 'Avanzado'}Avanzado</span></div>
-              <div className="skill-tag"><span>SQL / MySQL / Oracle</span> <span className="level">Avanzado</span></div>
-              <div className="skill-tag"><span>Ciclo de Vida de Software</span> <span className="level">Avanzado</span></div>
-              <div className="skill-tag"><span>Linux (Línea de Comandos)</span> <span className="level">Intermedio</span></div>
-              <div className="skill-tag"><span>Control de Versiones (Git)</span> <span className="level">Avanzado</span></div>
+              <div className="skill-tag"><span>Python / Go / Java</span> <span className="level">{t('skills_level_advanced')}</span></div>
+              <div className="skill-tag"><span>SQL / MySQL / Oracle</span> <span className="level">{t('skills_level_advanced')}</span></div>
+              <div className="skill-tag"><span>Ciclo de Vida de Software</span> <span className="level">{t('skills_level_advanced')}</span></div>
+              <div className="skill-tag"><span>Linux (Línea de Comandos)</span> <span className="level">{t('skills_level_intermediate')}</span></div>
+              <div className="skill-tag"><span>Control de Versiones (Git)</span> <span className="level">{t('skills_level_advanced')}</span></div>
             </div>
           </div>
           
@@ -42,11 +42,11 @@ export default function Skills({ t }) {
             </div>
             <h3>{t('skills_audit')}</h3>
             <div className="skills-list">
-              <div className="skill-tag"><span>Gobernanza (COBIT / ITIL)</span> <span className="level">Avanzado</span></div>
-              <div className="skill-tag"><span>Controles Generales (GITCs)</span> <span className="level">Avanzado</span></div>
-              <div className="skill-tag"><span>SOX & BIA Compliance</span> <span className="level">Avanzado</span></div>
-              <div className="skill-tag"><span>Normas PCAOB / AICPA</span> <span className="level">Avanzado</span></div>
-              <div className="skill-tag"><span>Auditoría de ERPs (SAP)</span> <span className="level">Intermedio</span></div>
+              <div className="skill-tag"><span>Gobernanza (COBIT / ITIL)</span> <span className="level">{t('skills_level_advanced')}</span></div>
+              <div className="skill-tag"><span>Controles Generales (GITCs)</span> <span className="level">{t('skills_level_advanced')}</span></div>
+              <div className="skill-tag"><span>SOX & BIA Compliance</span> <span className="level">{t('skills_level_advanced')}</span></div>
+              <div className="skill-tag"><span>Normas PCAOB / AICPA</span> <span className="level">{t('skills_level_advanced')}</span></div>
+              <div className="skill-tag"><span>Auditoría de ERPs (SAP)</span> <span className="level">{t('skills_level_intermediate')}</span></div>
             </div>
           </div>
           
@@ -60,11 +60,11 @@ export default function Skills({ t }) {
             </div>
             <h3>{t('skills_security')}</h3>
             <div className="skills-list">
-              <div className="skill-tag"><span>ISO 27001 Lead Auditor</span> <span className="level">Avanzado</span></div>
-              <div className="skill-tag"><span>Operaciones Ciberseguridad</span> <span className="level">Avanzado</span></div>
-              <div className="skill-tag"><span>Ethical Hacking</span> <span className="level">Intermedio</span></div>
-              <div className="skill-tag"><span>Cisco CyberOps Associate</span> <span className="level">Avanzado</span></div>
-              <div className="skill-tag"><span>Controles en la Nube (AWS/GCP)</span> <span className="level">Intermedio</span></div>
+              <div className="skill-tag"><span>ISO 27001 Lead Auditor</span> <span className="level">{t('skills_level_advanced')}</span></div>
+              <div className="skill-tag"><span>Operaciones Ciberseguridad</span> <span className="level">{t('skills_level_advanced')}</span></div>
+              <div className="skill-tag"><span>Ethical Hacking</span> <span className="level">{t('skills_level_intermediate')}</span></div>
+              <div className="skill-tag"><span>Cisco CyberOps Associate</span> <span className="level">{t('skills_level_advanced')}</span></div>
+              <div className="skill-tag"><span>Controles en la Nube (AWS/GCP)</span> <span className="level">{t('skills_level_intermediate')}</span></div>
             </div>
           </div>
           
@@ -79,11 +79,11 @@ export default function Skills({ t }) {
             </div>
             <h3>{t('skills_tools')}</h3>
             <div className="skills-list">
-              <div className="skill-tag"><span>DataSnipper / IDEA Script</span> <span className="level">Avanzado</span></div>
-              <div className="skill-tag"><span>Power BI & Analítica</span> <span className="level">Avanzado</span></div>
-              <div className="skill-tag"><span>Sistemas de Tickets</span> <span className="level">Avanzado</span></div>
-              <div className="skill-tag"><span>RPA & Virtualización</span> <span className="level">Intermedio</span></div>
-              <div className="skill-tag"><span>Excel Avanzado</span> <span className="level">Avanzado</span></div>
+              <div className="skill-tag"><span>DataSnipper / IDEA Script</span> <span className="level">{t('skills_level_advanced')}</span></div>
+              <div className="skill-tag"><span>Power BI & Analítica</span> <span className="level">{t('skills_level_advanced')}</span></div>
+              <div className="skill-tag"><span>Sistemas de Tickets</span> <span className="level">{t('skills_level_advanced')}</span></div>
+              <div className="skill-tag"><span>RPA & Virtualización</span> <span className="level">{t('skills_level_intermediate')}</span></div>
+              <div className="skill-tag"><span>Excel Avanzado</span> <span className="level">{t('skills_level_advanced')}</span></div>
             </div>
           </div>
         </div>

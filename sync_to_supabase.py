@@ -7,7 +7,7 @@ import requests
 SUPABASE_URL = os.environ.get("SUPABASE_URL", "https://rjmzpikjbqkwdoqkpkqy.supabase.co")
 SUPABASE_KEY = os.environ.get("SUPABASE_SERVICE_ROLE_KEY", "") # Service role key for writes
 
-json_path = "certifications.json"
+json_path = "public/certifications.json"
 
 def main():
     print("==================================================")

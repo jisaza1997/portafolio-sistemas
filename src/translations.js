@@ -29,10 +29,13 @@ export const translations = {
         skills_audit: "Auditoría de TI & Cumplimiento",
         skills_security: "Seguridad & Gestión de Riesgo",
         skills_tools: "Herramientas & Analítica",
+        skills_level_advanced: "Avanzado",
+        skills_level_intermediate: "Intermedio",
         
         exp_title: "Experiencia Profesional",
         exp_view_certificate: "Ver Certificado Laboral",
         exp_kpmg_role: "Auditor de TI",
+        exp_kpmg_date: "Marzo 2024 - Presente",
         exp_kpmg_desc: [
             "Auditoría de controles generales de TI (GITCs) incluyendo gestión de cambios, accesos lógicos y operaciones de TI bajo regulaciones SOX y PCAOB.",
             "Evaluación de la seguridad de la información y cumplimiento de controles clave para clientes nacionales y multinacionales.",
@@ -40,18 +43,21 @@ export const translations = {
             "Uso de herramientas avanzadas como DataSnipper e IDEA Scripting para la automatización de pruebas de auditoría y análisis de datos."
         ],
         exp_bancolombia_role: "Ingeniero de Software Backend",
+        exp_bancolombia_date: "Noviembre 2022 - Marzo 2024",
         exp_bancolombia_desc: [
             "Diseño y desarrollo del ciclo de vida completo de microservicios y aplicaciones del dominio bancario en entornos seguros.",
             "Implementación de estándares de desarrollo seguro (OWASP), optimización de rendimiento y pruebas de integración.",
             "Soporte, mantenimiento preventivo y correctivo de aplicaciones críticas mitigando anomalías reportadas."
         ],
         exp_unisys_role: "UTS Technical Support Representative 2",
+        exp_unisys_date: "Marzo 2022 - Noviembre 2022",
         exp_unisys_desc: [
             "Soporte avanzado de hardware y software y resolución de incidentes críticos para clientes corporativos.",
             "Gestión del flujo de incidentes mediante sistemas de tickets corporativos cumpliendo estrictos SLAs.",
             "Análisis de métricas de rendimiento y soporte a sistemas virtualizados y de telecomunicaciones."
         ],
         exp_dawa_role: "Auxiliar de Mantenimiento / Soporte Técnico",
+        exp_dawa_date: "Agosto 2021 - Febrero 2022",
         exp_dawa_desc: [
             "Administración y mantenimiento de bases de datos locales (SQL, MySQL, Access) y redes empresariales.",
             "Gestión de sistemas virtualizados y conexiones de red seguras (VPN, VDI, RPA).",
@@ -108,6 +114,7 @@ export const translations = {
         
         contact_title: "Iniciar Conversación",
         contact_card_title: "Información de Contacto",
+        contact_phone_label: "Teléfono Celular",
         contact_name_label: "Nombre Completo",
         contact_email_label: "Correo Electrónico",
         contact_msg_label: "Mensaje / Requerimiento",
@@ -149,10 +156,13 @@ export const translations = {
         skills_audit: "IT Audit & Compliance",
         skills_security: "Security & Risk Management",
         skills_tools: "Tools & Analytics",
+        skills_level_advanced: "Advanced",
+        skills_level_intermediate: "Intermediate",
         
         exp_title: "Work Experience",
         exp_view_certificate: "View Work Certificate",
         exp_kpmg_role: "IT Auditor",
+        exp_kpmg_date: "March 2024 - Present",
         exp_kpmg_desc: [
             "Auditing IT General Controls (GITCs) including change management, logical access, and IT operations under SOX and PCAOB regulations.",
             "Assessing information security compliance and key control effectiveness for domestic and multinational clients.",
@@ -160,18 +170,21 @@ export const translations = {
             "Utilizing advanced tools like DataSnipper and IDEA Scripting to automate audit procedures and perform data analysis."
         ],
         exp_bancolombia_role: "Backend Software Engineer",
+        exp_bancolombia_date: "November 2022 - March 2024",
         exp_bancolombia_desc: [
             "Designing and developing the full software lifecycle of bank-domain microservices in secure environments.",
             "Implementing secure development standards (OWASP), performance tuning, and integration testing.",
             "Providing preventive and corrective maintenance for critical business applications, mitigating reported anomalies."
         ],
         exp_unisys_role: "UTS Technical Support Representative 2",
+        exp_unisys_date: "March 2022 - November 2022",
         exp_unisys_desc: [
             "Providing advanced hardware/software technical support and resolving critical incidents for enterprise clients.",
             "Managing incident lifecycles using enterprise ticketing systems while maintaining strict SLA compliance.",
             "Analyzing performance metrics and supporting virtualized systems and telecommunications networks."
         ],
         exp_dawa_role: "Maintenance / IT Support Assistant",
+        exp_dawa_date: "August 2021 - February 2022",
         exp_dawa_desc: [
             "Managing and maintaining local databases (SQL, MySQL, Access) and corporate local area networks.",
             "Supporting virtualized systems and secure remote connectivity (VPN, VDI, RPA).",
@@ -228,6 +241,7 @@ export const translations = {
         
         contact_title: "Start a Conversation",
         contact_card_title: "Contact Details",
+        contact_phone_label: "Mobile Phone",
         contact_name_label: "Full Name",
         contact_email_label: "Email Address",
         contact_msg_label: "Message / Inquiries",

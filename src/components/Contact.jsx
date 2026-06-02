@@ -31,38 +31,37 @@ export default function Contact({ addAuditLog, t }) {
         </div>
 
         <div className="contact-grid">
-          <div className="contact-info glass-card">
-            <h3>{t('contact_card_title')}</h3>
-            <div className="contact-details">
-              <div className="contact-item">
-                <div className="contact-icon">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                    <polyline points="22,6 12,13 2,6"/>
-                  </svg>
-                </div>
-                <div>
-                  <h4>Email</h4>
-                  <p><a href="mailto:julianandresisazaarias7@gmail.com">julianandresisazaarias7@gmail.com</a></p>
-                </div>
+          <div className="contact-info">
+            {/* Email Card */}
+            <div className="contact-card glass-card" id="contact-card-email">
+              <div className="contact-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                  <polyline points="22,6 12,13 2,6"/>
+                </svg>
               </div>
+              <div className="contact-details">
+                <h4>{t('contact_card_title') === 'Información de Contacto' ? 'Correo Electrónico' : 'Email Address'}</h4>
+                <p><a href="mailto:julianandresisazaarias7@gmail.com">julianandresisazaarias7@gmail.com</a></p>
+              </div>
+            </div>
 
-              <div className="contact-item">
-                <div className="contact-icon">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-                  </svg>
-                </div>
-                <div>
-                  <h4>{lang => 'Teléfono'}Teléfono</h4>
-                  <p>+57 311 8287430</p>
-                </div>
+            {/* Phone Card */}
+            <div className="contact-card glass-card" id="contact-card-phone">
+              <div className="contact-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                </svg>
+              </div>
+              <div className="contact-details">
+                <h4>{t('contact_phone_label')}</h4>
+                <p>+57 311 8287430</p>
               </div>
             </div>
           </div>
 
-          <div className="contact-form-wrapper glass-card">
-            <form onSubmit={handleSubmit} className="contact-form">
+          <div className="contact-form glass-card">
+            <form id="secure-contact-form" onSubmit={handleSubmit}>
               <div className="form-group">
                 <label htmlFor="form-name">{t('contact_name_label')}</label>
                 <input 
@@ -90,10 +89,10 @@ export default function Contact({ addAuditLog, t }) {
               </div>
 
               <div className="form-group">
-                <label htmlFor="form-msg">{t('contact_msg_label')}</label>
+                <label htmlFor="form-message">{t('contact_msg_label')}</label>
                 <textarea 
                   name="message"
-                  id="form-msg" 
+                  id="form-message" 
                   rows="5" 
                   required 
                   value={formData.message}
@@ -102,7 +101,12 @@ export default function Contact({ addAuditLog, t }) {
                 ></textarea>
               </div>
 
-              <button type="submit" className="btn btn-primary btn-block">
+              <button 
+                type="submit" 
+                className="btn btn-primary" 
+                style={{ width: '100%' }}
+                id="btn-submit-contact"
+              >
                 {t('contact_send_btn')}
               </button>
 

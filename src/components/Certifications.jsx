@@ -91,7 +91,7 @@ export default function Certifications({ onCertsLoaded, addAuditLog, lang, t }) 
   }
 
   return (
-    <section id="certs" className="section-padding">
+    <section id="certifications" className="section-padding">
       <div className="container">
         <div className="section-title-wrapper">
           <span className="section-subtitle">{t('nav_certs')}</span>
@@ -99,9 +99,9 @@ export default function Certifications({ onCertsLoaded, addAuditLog, lang, t }) 
         </div>
 
         {/* Search and Filters */}
-        <div className="search-filter-wrapper">
-          <div className="search-box glass-card">
-            <svg className="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <div className="certs-controls">
+          <div className="certs-search">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
             </svg>
             <input 
@@ -112,7 +112,7 @@ export default function Certifications({ onCertsLoaded, addAuditLog, lang, t }) 
               id="cert-search-input" 
             />
           </div>
-          <div className="filters-container">
+          <div className="certs-filters">
             {categories.map(cat => (
               <button 
                 key={cat.key} 
@@ -144,7 +144,7 @@ export default function Certifications({ onCertsLoaded, addAuditLog, lang, t }) 
                 <p className="cert-issuer">{cert.issuer}</p>
                 <div className="cert-footer">
                   <span>{cert.date}</span>
-                  <span style={{ color: 'var(--accent-primary)', fontWeight: '600', display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
+                  <span style={{ color: 'var(--accent-primary)', fontWeight: '600', display: 'inline-flex', alignParagraphs: 'center', gap: '4px' }}>
                     {t('certs_view_btn')} &rarr;
                   </span>
                 </div>
@@ -187,51 +187,72 @@ export default function Certifications({ onCertsLoaded, addAuditLog, lang, t }) 
         </div>
       </div>
 
-      {/* React Modal Details */}
-      {selectedCert && (
-        <div className="modal-overlay active" onClick={() => setSelectedCert(null)}>
+      {/* Modal Details matching original structure */}
+      <div className={`modal ${selectedCert ? 'active' : ''}`} id="cert-modal" onClick={() => setSelectedCert(null)}>
+        {selectedCert && (
           <div className="modal-content glass-card" onClick={(e) => e.stopPropagation()}>
-            <button className="modal-close" onClick={() => setSelectedCert(null)}>&times;</button>
+            <button className="modal-close" onClick={() => setSelectedCert(null)} aria-label="Close modal">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="6" x2="6" y2="18"/>
+                <line x1="6" y1="6" x2="18" y2="18"/>
+              </svg>
+            </button>
             <div className="modal-header">
-              <span className="cert-category-badge">{t(`certs_filter_${selectedCert.category}`)}</span>
-              <h2>{lang === 'es' ? selectedCert.title_es : selectedCert.title_en}</h2>
-              <p className="modal-issuer-row"><b>{t('modal_issuer')}:</b> {selectedCert.issuer}</p>
+              <h3 id="modal-cert-title">{lang === 'es' ? selectedCert.title_es : selectedCert.title_en}</h3>
+              <p id="modal-cert-issuer" style={{ color: 'var(--accent-primary)', fontWeight: 600 }}>{selectedCert.issuer}</p>
             </div>
-            <div className="modal-body-content">
-              <p className="modal-meta-row"><b>{t('modal_date')}:</b> {selectedCert.date}</p>
-              <div className="modal-skills-box">
-                <h4>{t('certs_skills_label')}:</h4>
-                <div className="modal-skills-tags">
+            <div className="modal-body">
+              <div className="modal-info-grid">
+                <div className="modal-info-item">
+                  <h5 data-i18n="modal_date">{t('modal_date')}</h5>
+                  <p id="modal-cert-date">{selectedCert.date}</p>
+                </div>
+                <div className="modal-info-item">
+                  <h5 data-i18n="modal_verification">{t('modal_verification')}</h5>
+                  <p id="modal-cert-file" style={{ wordBreak: 'break-all' }}>{selectedCert.filename || "Verified PDF Ledger"}</p>
+                </div>
+              </div>
+              
+              <div className="modal-skills">
+                <h5 data-i18n="certs_skills_label">{t('certs_skills_label')}</h5>
+                <div className="modal-skills-list" id="modal-cert-skills">
                   {selectedCert.skills.map((skill, idx) => (
-                    <span className="skill-tag-small" key={idx}>{skill}</span>
+                    <span className="badge" key={idx}>{skill}</span>
                   ))}
                 </div>
               </div>
-              {selectedCert.filename && (
-                <div className="modal-evidence-box">
-                  <h4>{t('certs_file_label')}:</h4>
+              
+              <div className="modal-btn-wrapper" style={{ display: 'flex', gap: '12px', marginTop: '10px' }}>
+                {selectedCert.filename ? (
                   <a 
+                    id="modal-cert-download-link" 
                     href={getCertPdfUrl(selectedCert.filename)} 
                     target="_blank" 
                     rel="noopener noreferrer" 
-                    className="btn btn-primary btn-sm"
-                    style={{ marginTop: '8px', display: 'inline-flex', alignItems: 'center', gap: '6px' }}
+                    className="btn btn-primary"
+                    style={{ flex: 1, fontSize: '0.9rem', padding: '10px 16px', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '6px' }}
                   >
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                      <polyline points="14 2 14 8 20 8"/>
-                      <line x1="16" y1="13" x2="8" y2="13"/>
-                      <line x1="16" y1="17" x2="8" y2="17"/>
-                      <polyline points="10 9 9 9 8 9"/>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                      <polyline points="15 3 21 3 21 9"/>
+                      <line x1="10" y1="14" x2="21" y2="3"/>
                     </svg>
-                    Ver Certificado Oficial
+                    <span id="modal-view-doc-text">{t('certs_file_label') === 'Evidencia de Archivo' ? 'Ver Documento' : 'View Document'}</span>
                   </a>
-                </div>
-              )}
+                ) : null}
+                <button 
+                  className="btn btn-secondary modal-close" 
+                  style={{ flex: 1, fontSize: '0.9rem', padding: '10px 16px' }} 
+                  onClick={() => setSelectedCert(null)}
+                  data-i18n="modal_close_btn"
+                >
+                  {t('modal_close_btn')}
+                </button>
+              </div>
             </div>
           </div>
-        </div>
-      )}
+        )}
+      </div>
     </section>
   )
 }

@@ -58,7 +58,6 @@ export default function GitHubSection({ addAuditLog, t }) {
         if (!reposRes.ok) throw new Error("GitHub repos fetch failed")
         const reposData = await reposRes.json()
         
-        // Filter out the main kpmg-report-manager (displayed statically below) and get first 4
         const filtered = reposData.filter(repo => repo.name !== "kpmg-report-manager").slice(0, 4)
         setRepos(filtered)
         setLoading(false)
@@ -73,7 +72,7 @@ export default function GitHubSection({ addAuditLog, t }) {
   }, [])
 
   return (
-    <section id="projects" className="section-padding">
+    <section id="github-section" className="section-padding">
       <div className="container">
         <div className="section-title-wrapper">
           <span className="section-subtitle">{t('nav_projects')}</span>
@@ -82,19 +81,28 @@ export default function GitHubSection({ addAuditLog, t }) {
         
         {/* GitHub Stats Panel */}
         <div className="github-stats-container">
-          <div className="stat-card glass-card">
-            <span className="stat-num" id="github-repos-count">{stats.publicRepos}</span>
-            <span className="stat-label">{t('github_repos')}</span>
+          <div className="github-stat-card glass-card">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+            </svg>
+            <h4 id="github-repos-count">{stats.publicRepos}</h4>
+            <p>{t('github_repos')}</p>
           </div>
-          <div className="stat-card glass-card">
-            <span className="stat-num" id="github-followers-count">{stats.followers}</span>
-            <span className="stat-label">Followers</span>
+          <div className="github-stat-card glass-card">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+            <h4 id="github-followers-count">{stats.followers}</h4>
+            <p>{t('nav_about') === 'Sobre Mí' ? 'Seguidores / Contactos' : 'Followers / Contacts'}</p>
           </div>
         </div>
 
         {/* Repos Grid */}
         <div className="github-grid">
-          {/* Featured Project: KPMG Report Manager (Static highlight) */}
+          {/* Featured Project */}
           <div className="featured-project-card glass-card">
             <div className="featured-badge">{t('github_featured')}</div>
             <div className="project-header">
@@ -124,7 +132,7 @@ export default function GitHubSection({ addAuditLog, t }) {
             </div>
           </div>
 
-          {/* Dynamic Repos Grid */}
+          {/* Dynamic Repos */}
           <div className="github-repos-grid-wrapper">
             <div className="github-repos-grid" id="github-repos-grid">
               {repos.map(repo => (
