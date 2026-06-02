@@ -17,3 +17,9 @@ db
 .gemini/
 
 .vercel
+
+# Node dependencies and build folders
+node_modules/
+dist/
+.env
+.vite/
