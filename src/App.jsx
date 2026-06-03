@@ -9,11 +9,13 @@ import GitHubSection from './components/GitHubSection'
 import Certifications from './components/Certifications'
 import ControlCenter from './components/ControlCenter'
 import Contact from './components/Contact'
+import CyberBackground from './components/CyberBackground'
 
 export default function App() {
   const [lang, setLang] = useState('es')
   const [theme, setTheme] = useState('dark')
   const [certsCount, setCertsCount] = useState(42) // Fallback default
+  const [profile, setProfile] = useState('all') // 'all', 'backend', 'audit'
   
   const getTimestamp = () => new Date().toISOString().replace('T', ' ').substring(0, 19)
 
@@ -76,6 +78,7 @@ export default function App() {
 
   return (
     <>
+      <CyberBackground theme={theme} />
       <Header 
         lang={lang} 
         setLang={setLang} 
@@ -92,14 +95,18 @@ export default function App() {
         
         <About 
           certsCount={certsCount} 
+          profile={profile}
+          setProfile={setProfile}
           t={t} 
         />
         
         <Skills 
+          profile={profile}
           t={t} 
         />
         
         <Experience 
+          profile={profile}
           t={t} 
         />
         

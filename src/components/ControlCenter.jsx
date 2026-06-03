@@ -44,6 +44,11 @@ export default function ControlCenter({ logs, addAuditLog, lang, t }) {
   }, [logs])
 
   const getLabelClass = (type) => {
+    if (type === "USER_INPUT") return "cli-prompt"
+    if (type === "SYS_HELP") return "cli-help"
+    if (type === "SYS_CMD" || type === "SYS_RUN") return "cli-run"
+    if (type === "XSS_ALERT") return "xss-alert"
+    if (type === "XSS_SAFE") return "xss-safe"
     if (type.includes("SUCCESS")) return "success"
     if (type.includes("AUDIT")) return "status"
     return "info"
@@ -54,6 +59,54 @@ export default function ControlCenter({ logs, addAuditLog, lang, t }) {
     const fileName = imgPath.split('/').pop()
     addAuditLog("AUDIT_EVIDENCE", `Viewing compliance exam score screenshot: [${fileName}]`)
   }
+
+  const [cliInput, setCliInput] = useState('')
+
+  const handleCliKeyDown = (e) => {
+    if (e.key === 'Enter') {
+      const command = cliInput.trim()
+      if (!command) return
+
+      const escapeHtml = (str) => {
+        return str
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;')
+          .replace(/'/g, '&#039;')
+      }
+
+      const escapedCmd = escapeHtml(command)
+      addAuditLog("USER_INPUT", `guest@audit-cli:~$ ${escapedCmd}`)
+
+      const lowerCmd = command.toLowerCase().trim()
+      
+      if (lowerCmd === 'help' || lowerCmd === 'ayuda') {
+        if (lang === 'es') {
+          addAuditLog("SYS_HELP", "Comandos: 'ayuda', 'limpiar', 'auditoria', 'xss <texto>'")
+        } else {
+          addAuditLog("SYS_HELP", "Commands: 'help', 'clear', 'audit', 'xss <payload>'")
+        }
+      } else if (lowerCmd === 'clear' || lowerCmd === 'limpiar') {
+        addAuditLog("SYS_CMD", lang === 'es' ? "Limpieza denegada: Se requiere rol de Administrador." : "Clear denied: Administrator role required.")
+      } else if (lowerCmd === 'audit' || lowerCmd === 'auditoria') {
+        addAuditLog("SYS_RUN", lang === 'es' ? "Escaneando firmas criptográficas de commits y políticas..." : "Scanning commit cryptographic signatures and policies...")
+        setTimeout(() => addAuditLog("SUCCESS", lang === 'es' ? "Pipeline verificado: Despliegue firmado e íntegro." : "Pipeline verified: Signed, integral deployment."), 800)
+        setTimeout(() => addAuditLog("SUCCESS", lang === 'es' ? "Control A.12.6.1: Cumplimiento de parches OK." : "Control A.12.6.1: Patch compliance OK."), 1500)
+      } else if (lowerCmd.startsWith('xss ')) {
+        const payload = command.substring(4)
+        const sanitized = escapeHtml(payload)
+        addAuditLog("XSS_ALERT", lang === 'es' ? `Carga cruda recibida: ${payload}` : `Raw payload received: ${payload}`)
+        addAuditLog("XSS_SAFE", lang === 'es' ? `DOM sanitizado seguro: ${sanitized}` : `Safe sanitized DOM: ${sanitized}`)
+        addAuditLog("SUCCESS", "OWASP A03:2021 (Injection Protection) Compliant")
+      } else {
+        addAuditLog("XSS_SAFE", `${escapeHtml(command)}`)
+      }
+
+      setCliInput('')
+    }
+  }
+
 
   return (
     <section id="audit-section" className="section-padding">
@@ -174,6 +227,17 @@ export default function ControlCenter({ logs, addAuditLog, lang, t }) {
                   </div>
                 ))}
                 <div ref={terminalEndRef} />
+              </div>
+              <div className="terminal-input-wrapper" style={{ display: 'flex', alignItems: 'center', background: '#0b0f19', padding: '10px 14px', borderTop: '1px solid var(--border-color)', borderBottomLeftRadius: '10px', borderBottomRightRadius: '10px' }}>
+                <span style={{ color: 'var(--accent-primary)', fontSize: '0.85rem', marginRight: '6px', fontFamily: 'monospace', fontWeight: 600 }}>guest@audit-cli:~$</span>
+                <input 
+                  type="text" 
+                  value={cliInput}
+                  onChange={(e) => setCliInput(e.target.value)}
+                  onKeyDown={handleCliKeyDown}
+                  placeholder={lang === 'es' ? "escribe 'ayuda' para empezar..." : "type 'help' to start..."}
+                  style={{ flex: 1, background: 'transparent', border: 'none', outline: 'none', color: '#00ff66', fontFamily: 'monospace', fontSize: '0.85rem', width: '100%' }}
+                />
               </div>
             </div>
 

@@ -1,6 +1,9 @@
 import React from 'react'
 
-export default function Skills({ t }) {
+export default function Skills({ profile, t }) {
+  const highlightBackend = profile === 'backend'
+  const highlightAudit = profile === 'audit'
+
   return (
     <section id="skills" className="section-padding">
       <div className="container">
@@ -11,7 +14,10 @@ export default function Skills({ t }) {
         
         <div className="skills-grid">
           {/* Backend Development */}
-          <div className="skills-category glass-card" id="skills-cat-backend">
+          <div 
+            className={`skills-category glass-card ${highlightBackend ? 'highlighted-backend' : ''} ${profile !== 'all' && !highlightBackend ? 'dimmed' : ''}`} 
+            id="skills-cat-backend"
+          >
             <div className="category-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <polygon points="12 2 2 7 12 12 22 7 12 2"/>
@@ -30,7 +36,10 @@ export default function Skills({ t }) {
           </div>
           
           {/* IT Audit */}
-          <div className="skills-category glass-card" id="skills-cat-audit">
+          <div 
+            className={`skills-category glass-card ${highlightAudit ? 'highlighted-audit' : ''} ${profile !== 'all' && !highlightAudit ? 'dimmed' : ''}`} 
+            id="skills-cat-audit"
+          >
             <div className="category-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
@@ -51,7 +60,10 @@ export default function Skills({ t }) {
           </div>
           
           {/* Security & Risk */}
-          <div className="skills-category glass-card" id="skills-cat-security">
+          <div 
+            className={`skills-category glass-card ${highlightAudit ? 'highlighted-audit' : ''} ${profile !== 'all' && !highlightAudit ? 'dimmed' : ''}`} 
+            id="skills-cat-security"
+          >
             <div className="category-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
@@ -69,7 +81,10 @@ export default function Skills({ t }) {
           </div>
           
           {/* Tools & Analytics */}
-          <div className="skills-category glass-card" id="skills-cat-tools">
+          <div 
+            className={`skills-category glass-card ${highlightBackend ? 'highlighted-backend' : ''} ${profile !== 'all' && !highlightBackend ? 'dimmed' : ''}`} 
+            id="skills-cat-tools"
+          >
             <div className="category-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <line x1="18" y1="20" x2="18" y2="10"/>

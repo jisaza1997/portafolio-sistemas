@@ -4,6 +4,7 @@ export default function Certifications({ onCertsLoaded, addAuditLog, lang, t }) 
   const [certs, setCerts] = useState([])
   const [activeCategory, setActiveCategory] = useState('all')
   const [searchQuery, setSearchQuery] = useState('')
+  const [hoveredSegment, setHoveredSegment] = useState(null)
   const [selectedCert, setSelectedCert] = useState(null)
 
   // Load certifications database
@@ -66,6 +67,10 @@ export default function Certifications({ onCertsLoaded, addAuditLog, lang, t }) 
     return counts
   }, [certs])
 
+  const totalCertsCount = useMemo(() => {
+    return Object.values(categoryCounts).reduce((a, b) => a + b, 0)
+  }, [categoryCounts])
+
   const maxCount = useMemo(() => {
     return Math.max(...Object.values(categoryCounts)) || 1
   }, [categoryCounts])
@@ -78,6 +83,30 @@ export default function Certifications({ onCertsLoaded, addAuditLog, lang, t }) 
     { key: 'coursera', color: '#3b82f6' },
     { key: 'udemy', color: 'var(--accent-warning)' }
   ]
+
+  const chartSegments = useMemo(() => {
+    let accumulatedPercent = 0
+    const circumference = 2 * Math.PI * 55 // radius = 55
+
+    return chartCategories.map(cat => {
+      const count = categoryCounts[cat.key] || 0
+      const percent = totalCertsCount > 0 ? (count / totalCertsCount) : 0
+      const strokeLength = percent * circumference
+      const strokeOffset = circumference - (accumulatedPercent * circumference)
+      
+      accumulatedPercent += percent
+
+      return {
+        ...cat,
+        count,
+        percent: Math.round(percent * 100),
+        strokeLength,
+        strokeOffset,
+        circumference,
+        displayName: t(`certs_filter_${cat.key}`)
+      }
+    }).filter(seg => seg.count > 0)
+  }, [categoryCounts, totalCertsCount, lang])
 
   const handleFilterClick = (catKey) => {
     setActiveCategory(catKey)
@@ -156,33 +185,85 @@ export default function Certifications({ onCertsLoaded, addAuditLog, lang, t }) 
         {/* Charts Section */}
         <div className="certs-analytics glass-card">
           <h3>{t('certs_stats_title')}</h3>
-          <div className="certs-chart-container" id="certs-chart-container">
-            {chartCategories.map(cat => {
-              const count = categoryCounts[cat.key] || 0
-              const percent = (count / maxCount) * 100
-              const displayName = t(`certs_filter_${cat.key}`)
+          <div className="certs-chart-wrapper">
+            {/* SVG Doughnut Chart */}
+            <div className="doughnut-chart-visual">
+              <svg width="100%" height="100%" viewBox="0 0 160 160" style={{ transform: 'rotate(-90deg)' }}>
+                {/* Background track */}
+                <circle cx="80" cy="80" r="55" fill="transparent" stroke="rgba(255, 255, 255, 0.04)" strokeWidth="16" />
+                {/* Segments */}
+                {chartSegments.map((seg) => {
+                  const isHovered = hoveredSegment && hoveredSegment.key === seg.key;
+                  return (
+                    <circle
+                      key={seg.key}
+                      cx="80"
+                      cy="80"
+                      r="55"
+                      fill="transparent"
+                      stroke={seg.color}
+                      strokeWidth={isHovered ? 20 : 16}
+                      strokeDasharray={`${seg.strokeLength} ${seg.circumference}`}
+                      strokeDashoffset={seg.strokeOffset}
+                      strokeLinecap="round"
+                      style={{ transition: 'all 0.3s ease', cursor: 'pointer' }}
+                      onMouseEnter={() => setHoveredSegment(seg)}
+                      onMouseLeave={() => setHoveredSegment(null)}
+                      onClick={() => handleFilterClick(seg.key)}
+                    />
+                  );
+                })}
+              </svg>
+              {/* Dynamic center text */}
+              <div className="doughnut-center-text">
+                <span className="doughnut-center-label">
+                  {hoveredSegment ? hoveredSegment.displayName : (lang === 'es' ? 'Total' : 'Total')}
+                </span>
+                <span className="doughnut-center-value" style={{ color: hoveredSegment ? hoveredSegment.color : 'var(--text-primary)' }}>
+                  {hoveredSegment ? hoveredSegment.count : totalCertsCount}
+                </span>
+              </div>
+            </div>
 
-              return (
-                <div key={cat.key} className="chart-bar-wrapper" style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.85rem', fontWeight: '600' }}>
-                    <span style={{ color: 'var(--text-secondary)' }}>{displayName}</span>
-                    <span style={{ color: cat.color, fontWeight: '700' }}>{count}</span>
+            {/* Legend / Progress Bars list */}
+            <div className="certs-chart-legend">
+              {chartCategories.map(cat => {
+                const count = categoryCounts[cat.key] || 0
+                const percent = totalCertsCount > 0 ? (count / totalCertsCount) * 100 : 0
+                const displayName = t(`certs_filter_${cat.key}`)
+                const isHovered = hoveredSegment && hoveredSegment.key === cat.key;
+
+                return (
+                  <div 
+                    key={cat.key} 
+                    className={`chart-bar-wrapper ${isHovered ? 'hovered' : ''} ${hoveredSegment && !isHovered ? 'dimmed' : ''}`}
+                    onMouseEnter={() => {
+                      const seg = chartSegments.find(s => s.key === cat.key)
+                      if (seg) setHoveredSegment(seg)
+                    }}
+                    onMouseLeave={() => setHoveredSegment(null)}
+                    onClick={() => handleFilterClick(cat.key)}
+                  >
+                    <div className="legend-label-row">
+                      <span className="legend-name">{displayName}</span>
+                      <span className="legend-count" style={{ color: cat.color }}>{count}</span>
+                    </div>
+                    <div className="legend-progress-track">
+                      <div 
+                        className="chart-progress-bar" 
+                        style={{ 
+                          width: `${percent}%`, 
+                          height: '100%', 
+                          background: cat.color, 
+                          borderRadius: '3px', 
+                          transition: 'width 1s ease-out' 
+                        }}
+                      ></div>
+                    </div>
                   </div>
-                  <div style={{ width: '100%', height: '8px', background: 'rgba(255, 255, 255, 0.05)', borderRadius: '4px', overflow: 'hidden', border: '1px solid var(--border-color)' }}>
-                    <div 
-                      className="chart-progress-bar" 
-                      style={{ 
-                        width: `${percent}%`, 
-                        height: '100%', 
-                        background: cat.color, 
-                        borderRadius: '4px', 
-                        transition: 'width 1s ease-out' 
-                      }}
-                    ></div>
-                  </div>
-                </div>
-              )
-            })}
+                )
+              })}
+            </div>
           </div>
         </div>
       </div>

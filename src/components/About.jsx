@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function About({ certsCount, t }) {
+export default function About({ certsCount, profile, setProfile, t }) {
   return (
     <section id="about" className="section-padding">
       <div className="container">
@@ -27,6 +27,68 @@ export default function About({ certsCount, t }) {
           </div>
           
           <div className="about-cv">
+            <div className="profile-switcher-wrapper glass-card" style={{ marginBottom: '20px', padding: '20px' }}>
+              <h4 style={{ marginBottom: '12px', fontSize: '1rem', fontWeight: 600, color: 'var(--text-primary)' }}>
+                {t('about_profile_switcher_title')}
+              </h4>
+              <div className="profile-switcher-buttons" style={{ display: 'flex', gap: '8px', background: 'rgba(0,0,0,0.25)', padding: '4px', borderRadius: '8px' }}>
+                <button 
+                  className={`btn-switcher ${profile === 'all' ? 'active' : ''}`}
+                  onClick={() => setProfile('all')}
+                  style={{ 
+                    flex: 1, 
+                    border: 'none', 
+                    background: profile === 'all' ? 'var(--accent-primary)' : 'transparent', 
+                    color: profile === 'all' ? '#0f172a' : 'var(--text-secondary)', 
+                    padding: '8px', 
+                    borderRadius: '6px', 
+                    cursor: 'pointer', 
+                    fontWeight: 600, 
+                    fontSize: '0.8rem', 
+                    transition: 'all var(--transition-fast)' 
+                  }}
+                >
+                  {t('profile_switcher_all')}
+                </button>
+                <button 
+                  className={`btn-switcher ${profile === 'backend' ? 'active' : ''}`}
+                  onClick={() => setProfile('backend')}
+                  style={{ 
+                    flex: 1, 
+                    border: 'none', 
+                    background: profile === 'backend' ? 'var(--accent-primary)' : 'transparent', 
+                    color: profile === 'backend' ? '#0f172a' : 'var(--text-secondary)', 
+                    padding: '8px', 
+                    borderRadius: '6px', 
+                    cursor: 'pointer', 
+                    fontWeight: 600, 
+                    fontSize: '0.8rem', 
+                    transition: 'all var(--transition-fast)' 
+                  }}
+                >
+                  {t('profile_switcher_backend')}
+                </button>
+                <button 
+                  className={`btn-switcher ${profile === 'audit' ? 'active' : ''}`}
+                  onClick={() => setProfile('audit')}
+                  style={{ 
+                    flex: 1, 
+                    border: 'none', 
+                    background: profile === 'audit' ? 'var(--accent-secondary)' : 'transparent', 
+                    color: profile === 'audit' ? '#0f172a' : 'var(--text-secondary)', 
+                    padding: '8px', 
+                    borderRadius: '6px', 
+                    cursor: 'pointer', 
+                    fontWeight: 600, 
+                    fontSize: '0.8rem', 
+                    transition: 'all var(--transition-fast)' 
+                  }}
+                >
+                  {t('profile_switcher_audit')}
+                </button>
+              </div>
+            </div>
+
             <div className="cv-download-wrapper glass-card">
               <h4>{t('about_cv_title')}</h4>
               <div className="cv-buttons">

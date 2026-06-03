@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Experience({ t }) {
+export default function Experience({ profile, t }) {
   const getBullets = (key) => {
     const list = t(key)
     if (Array.isArray(list)) {
@@ -20,8 +20,8 @@ export default function Experience({ t }) {
         <div className="timeline">
           {/* KPMG */}
           <div className="timeline-item">
-            <div className="timeline-marker active"></div>
-            <div className="timeline-content glass-card" id="exp-kpmg">
+            <div className={`timeline-marker ${profile === 'audit' ? 'active' : ''}`}></div>
+            <div className={`timeline-content glass-card ${profile === 'backend' ? 'dimmed' : ''}`} id="exp-kpmg">
               <div className="timeline-header">
                 <div>
                   <h3 className="text-gradient-emerald">KPMG Colombia</h3>
@@ -39,8 +39,8 @@ export default function Experience({ t }) {
           
           {/* Bancolombia */}
           <div className="timeline-item">
-            <div className="timeline-marker"></div>
-            <div className="timeline-content glass-card" id="exp-bancolombia">
+            <div className={`timeline-marker ${profile === 'backend' ? 'active' : ''}`}></div>
+            <div className={`timeline-content glass-card ${profile === 'audit' ? 'dimmed' : ''}`} id="exp-bancolombia">
               <div className="timeline-header">
                 <div>
                   <h3 className="text-gradient-cyan">Bancolombia</h3>
@@ -76,7 +76,7 @@ export default function Experience({ t }) {
           {/* Unisys */}
           <div className="timeline-item">
             <div className="timeline-marker"></div>
-            <div className="timeline-content glass-card" id="exp-unisys">
+            <div className={`timeline-content glass-card ${profile === 'backend' ? 'dimmed' : ''}`} id="exp-unisys">
               <div className="timeline-header">
                 <div>
                   <h3>Unisys</h3>
@@ -111,8 +111,8 @@ export default function Experience({ t }) {
           
           {/* DAWA */}
           <div className="timeline-item">
-            <div className="timeline-marker"></div>
-            <div className="timeline-content glass-card" id="exp-dawa">
+            <div className={`timeline-marker ${profile === 'backend' ? 'active' : ''}`}></div>
+            <div className={`timeline-content glass-card ${profile === 'audit' ? 'dimmed' : ''}`} id="exp-dawa">
               <div className="timeline-header">
                 <div>
                   <h3>DAWA Solutions Group, LLC</h3>

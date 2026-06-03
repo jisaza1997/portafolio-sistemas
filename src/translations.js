@@ -23,6 +23,10 @@ export const translations = {
         about_cv_title: "Descargar Hojas de Vida",
         about_cv_es: "Descargar CV (Español)",
         about_cv_en: "Descargar CV (English Profile)",
+        about_profile_switcher_title: "Personalizar Enfoque del Portafolio",
+        profile_switcher_all: "Vista Completa",
+        profile_switcher_backend: "Backend Dev",
+        profile_switcher_audit: "Auditor TI & Ciberseguridad",
         
         skills_title: "Matriz de Capacidades",
         skills_backend: "Desarrollo Backend",
@@ -150,6 +154,10 @@ export const translations = {
         about_cv_title: "Download Resume",
         about_cv_es: "Download CV (Spanish)",
         about_cv_en: "Download CV (English Profile)",
+        about_profile_switcher_title: "Customize Portfolio Focus",
+        profile_switcher_all: "Full View",
+        profile_switcher_backend: "Backend Dev",
+        profile_switcher_audit: "IT Auditor & Cyber",
         
         skills_title: "Capability Matrix",
         skills_backend: "Backend Development",
