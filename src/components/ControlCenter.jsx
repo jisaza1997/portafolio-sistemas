@@ -228,7 +228,7 @@ export default function ControlCenter({ logs, addAuditLog, lang, t }) {
                 ))}
                 <div ref={terminalEndRef} />
               </div>
-              <div className="terminal-input-wrapper" style={{ display: 'flex', alignItems: 'center', background: '#0b0f19', padding: '10px 14px', borderTop: '1px solid var(--border-color)', borderBottomLeftRadius: '10px', borderBottomRightRadius: '10px' }}>
+              <div className="terminal-input-wrapper">
                 <span style={{ color: 'var(--accent-primary)', fontSize: '0.85rem', marginRight: '6px', fontFamily: 'monospace', fontWeight: 600 }}>guest@audit-cli:~$</span>
                 <input 
                   type="text" 

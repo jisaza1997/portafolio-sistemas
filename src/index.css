@@ -1165,11 +1165,12 @@ nav a:hover::after, nav a.active::after {
     background: #0d1117;
     border: 1px solid var(--border-color);
     border-radius: 12px;
-    padding: 20px;
+    padding: 0;
     font-family: 'Courier New', Courier, monospace;
     font-size: 0.8rem;
     color: #39ff14; /* Matrix Green */
     box-shadow: var(--shadow);
+    overflow: hidden;
 }
 
 .terminal-header {
@@ -1177,8 +1178,8 @@ nav a:hover::after, nav a.active::after {
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    padding-bottom: 8px;
-    margin-bottom: 12px;
+    padding: 12px 20px;
+    background: rgba(255, 255, 255, 0.02);
     color: var(--text-muted);
     font-family: var(--font-body);
 }
@@ -1199,11 +1200,12 @@ nav a:hover::after, nav a.active::after {
 .terminal-dots span:nth-child(3) { background: #27c93f; }
 
 .terminal-logs {
-    height: 150px;
+    height: 280px;
     overflow-y: auto;
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 8px;
+    padding: 16px 20px;
 }
 
 .terminal-logs::-webkit-scrollbar {
@@ -1722,5 +1724,26 @@ footer {
 .terminal-line span.xss-safe {
     color: #34d399 !important;
     font-weight: 700;
+}
+
+.certs-analytics {
+    padding: 32px;
+    border-radius: 16px;
+    margin-top: 48px;
+}
+
+@media (max-width: 768px) {
+    .certs-analytics {
+        padding: 24px 16px;
+        margin-top: 32px;
+    }
+}
+
+.terminal-input-wrapper {
+    display: flex;
+    align-items: center;
+    background: #070a10;
+    padding: 12px 20px;
+    border-top: 1px solid var(--border-color);
 }
 
