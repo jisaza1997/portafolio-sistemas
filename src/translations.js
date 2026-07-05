@@ -10,13 +10,13 @@ export const translations = {
         
         hero_greet: "Hola, mi nombre es",
         hero_tagline: "Protegiendo e impulsando la infraestructura tecnológica del futuro.",
-        hero_desc: "Ingeniero de Sistemas egresado del Área Andina y Auditor de TI en KPMG Colombia. Me especializo en el desarrollo backend seguro, la evaluación de riesgos tecnológicos (SOX/ICFR), ciberseguridad y auditoría bajo estándares ISO 27001.",
+        hero_desc: "Ingeniero de Sistemas y Auditor de TI en KPMG Colombia. Especialista en desarrollo backend seguro (Python, TypeScript), bases de datos (SQL, MongoDB) y auditoría tecnológica (SOX/ISO 27001). Con conocimientos avanzados en la integración de Inteligencia Artificial (Agentes Autónomos, protocolos MCP) y la automatización avanzada de procesos con Python y macros de Excel (VBA).",
         hero_cta_portfolio: "Ver Portafolio",
         hero_cta_contact: "Contáctame",
         
         about_title: "Trayectoria Profesional",
-        about_p1: "Soy un Ingeniero de Sistemas apasionado por la seguridad, el desarrollo y la auditoría tecnológica. Con experiencia en el desarrollo backend en el sector bancario (Bancolombia) y en la evaluación de controles generales de TI (GITCs) y controles de aplicación para multinacionales en KPMG Colombia.",
-        about_p2: "Mi enfoque combina la rigurosidad técnica de la ingeniería de software con las mejores prácticas de gobernanza de TI (COBIT, ITIL) y ciberseguridad, asegurando que los sistemas no solo sean eficientes, sino también seguros, auditables y conformes con regulaciones internacionales (SOX, PCAOB).",
+        about_p1: "Soy un Ingeniero de Sistemas enfocado en la seguridad de la información, el desarrollo backend y la auditoría de TI. Con experiencia en el desarrollo de microservicios (Python, TypeScript, SQL, MongoDB) y en la evaluación de controles generales de TI (GITCs). Cuento con conocimientos avanzados en la integración de herramientas de Inteligencia Artificial (Agentes Autónomos y servidores MCP) para la creación y automatización de recursos corporativos.",
+        about_p2: "Mi enfoque combina el desarrollo de software estructurado con las mejores prácticas de gobernanza de TI (COBIT, ITIL) y ciberseguridad. Esto incluye la creación de scripts en Python, automatizaciones mediante Visual Basic (VBA) para el análisis de datos y la generación de evidencias en Excel, y la auditoría de sistemas bajo regulaciones internacionales (SOX, PCAOB).",
         about_years_exp: "Años de Experiencia",
         about_certs_count: "Certificaciones",
         about_code_projects: "Proyectos Realizados",
@@ -44,7 +44,8 @@ export const translations = {
             "Auditoría de controles generales de TI (GITCs) incluyendo gestión de cambios, accesos lógicos y operaciones de TI bajo regulaciones SOX y PCAOB.",
             "Evaluación de la seguridad de la información y cumplimiento de controles clave para clientes nacionales y multinacionales.",
             "Auditoría de sistemas operativos (Windows, Linux), bases de datos (SQL, Oracle) y sistemas ERP de gran escala (SAP).",
-            "Automatización de pruebas de auditoría, análisis de grandes volúmenes de datos y generación de evidencias mediante macros de Excel con programación en Visual Basic para Aplicaciones (VBA), DataSnipper e IDEA Scripting."
+            "Automatización de pruebas de auditoría y análisis de datos mediante macros estructuradas de Excel con programación avanzada en Visual Basic (VBA), DataSnipper e IDEA.",
+            "Investigación y uso de Inteligencia Artificial (Agentes Autónomos y servidores MCP) para la creación, optimización y automatización de recursos y flujos de trabajo de auditoría tecnológica."
         ],
         exp_bancolombia_role: "Ingeniero de Software Backend",
         exp_bancolombia_date: "Noviembre 2022 - Marzo 2024",
@@ -142,13 +143,13 @@ export const translations = {
         
         hero_greet: "Hi, my name is",
         hero_tagline: "Securing and empowering the technological infrastructure of the future.",
-        hero_desc: "Systems Engineer from Área Andina and IT Auditor at KPMG Colombia. I specialize in secure backend development, technology risk assessments (SOX/ICFR), cybersecurity, and auditing under ISO 27001 standards.",
+        hero_desc: "Systems Engineer and IT Auditor at KPMG Colombia. Specializing in secure backend development (Python, TypeScript), database management (SQL, MongoDB), and tech auditing (SOX/ISO 27001). With advanced proficiency in Artificial Intelligence integration (Autonomous Agents, MCP protocols) and advanced process automation with Python and Excel macros (VBA).",
         hero_cta_portfolio: "View Portfolio",
         hero_cta_contact: "Contact Me",
         
         about_title: "Professional Background",
-        about_p1: "I am a Systems Engineer passionate about technology security, development, and auditing. Experienced in backend software development in the banking sector (Bancolombia) and in evaluating General IT Controls (GITCs) and application controls for multinational corporations at KPMG Colombia.",
-        about_p2: "My approach combines the technical rigor of software engineering with IT governance best practices (COBIT, ITIL) and cybersecurity, ensuring systems are not only efficient but also secure, auditable, and compliant with international regulations (SOX, PCAOB).",
+        about_p1: "I am a Systems Engineer focused on information security, backend development, and technology auditing. Experienced in secure microservices development (Python, TypeScript, SQL, MongoDB) and General IT Controls (GITCs) evaluation. With advanced proficiency in integrating Artificial Intelligence tools (Autonomous Agents and MCP servers) for secure resource creation and corporate workflow automation.",
+        about_p2: "My approach combines structured software development with IT governance best practices (COBIT, ITIL) and cybersecurity. This includes writing Python scripts, automating data analysis and generating audit evidence in Excel using Visual Basic (VBA) macro development, and auditing systems under international regulations (SOX, PCAOB).",
         about_years_exp: "Years of Experience",
         about_certs_count: "Certifications",
         about_code_projects: "Completed Projects",
@@ -176,7 +177,8 @@ export const translations = {
             "Auditing IT General Controls (GITCs) including change management, logical access, and IT operations under SOX and PCAOB regulations.",
             "Assessing information security compliance and key control effectiveness for domestic and multinational clients.",
             "Auditing operating systems (Windows, Linux), databases (SQL, Oracle), and large-scale ERP systems (SAP).",
-            "Automating audit procedures, performing large-scale data analysis, and generating audit evidences using Excel macros with Visual Basic for Applications (VBA) programming, DataSnipper, and IDEA Scripting."
+            "Automating audit procedures, performing large-scale data analysis, and generating audit evidences using Excel macros with Visual Basic for Applications (VBA) programming, DataSnipper, and IDEA.",
+            "Researching and utilizing Artificial Intelligence (Autonomous Agents and MCP servers) to automate resource creation, optimize processes, and streamline technology audit workflows."
         ],
         exp_bancolombia_role: "Backend Software Engineer",
         exp_bancolombia_date: "November 2022 - March 2024",

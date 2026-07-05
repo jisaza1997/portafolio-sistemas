@@ -27,9 +27,9 @@ export default function Skills({ profile, t }) {
             </div>
             <h3>{t('skills_backend')}</h3>
             <div className="skills-list">
-              <div className="skill-tag"><span>Python / Go / Java</span> <span className="level">{t('skills_level_advanced')}</span></div>
-              <div className="skill-tag"><span>SQL / MySQL / Oracle</span> <span className="level">{t('skills_level_advanced')}</span></div>
-              <div className="skill-tag"><span>Ciclo de Vida de Software</span> <span className="level">{t('skills_level_advanced')}</span></div>
+              <div className="skill-tag"><span>Python / TypeScript / Go</span> <span className="level">{t('skills_level_advanced')}</span></div>
+              <div className="skill-tag"><span>SQL / MongoDB (NoSQL)</span> <span className="level">{t('skills_level_advanced')}</span></div>
+              <div className="skill-tag"><span>Ciclo de Vida & Automatización</span> <span className="level">{t('skills_level_advanced')}</span></div>
               <div className="skill-tag"><span>Linux (Línea de Comandos)</span> <span className="level">{t('skills_level_intermediate')}</span></div>
               <div className="skill-tag"><span>Control de Versiones (Git)</span> <span className="level">{t('skills_level_advanced')}</span></div>
             </div>
@@ -94,11 +94,11 @@ export default function Skills({ profile, t }) {
             </div>
             <h3>{t('skills_tools')}</h3>
             <div className="skills-list">
-              <div className="skill-tag"><span>DataSnipper / VBA / IDEA Script</span> <span className="level">{t('skills_level_advanced')}</span></div>
+              <div className="skill-tag"><span>Agentes IA / Servidores MCP</span> <span className="level">{t('skills_level_advanced')}</span></div>
               <div className="skill-tag"><span>Power BI & Analítica</span> <span className="level">{t('skills_level_advanced')}</span></div>
               <div className="skill-tag"><span>Sistemas de Tickets</span> <span className="level">{t('skills_level_advanced')}</span></div>
-              <div className="skill-tag"><span>RPA & Virtualización</span> <span className="level">{t('skills_level_intermediate')}</span></div>
-              <div className="skill-tag"><span>Excel (Macros & VBA)</span> <span className="level">{t('skills_level_advanced')}</span></div>
+              <div className="skill-tag"><span>RPA & Automatización</span> <span className="level">{t('skills_level_intermediate')}</span></div>
+              <div className="skill-tag"><span>Excel (Macros VBA & IDEA)</span> <span className="level">{t('skills_level_advanced')}</span></div>
             </div>
           </div>
         </div>
