@@ -94,11 +94,11 @@ export default function Skills({ profile, t }) {
             </div>
             <h3>{t('skills_tools')}</h3>
             <div className="skills-list">
-              <div className="skill-tag"><span>DataSnipper / IDEA Script</span> <span className="level">{t('skills_level_advanced')}</span></div>
+              <div className="skill-tag"><span>DataSnipper / VBA / IDEA Script</span> <span className="level">{t('skills_level_advanced')}</span></div>
               <div className="skill-tag"><span>Power BI & Analítica</span> <span className="level">{t('skills_level_advanced')}</span></div>
               <div className="skill-tag"><span>Sistemas de Tickets</span> <span className="level">{t('skills_level_advanced')}</span></div>
               <div className="skill-tag"><span>RPA & Virtualización</span> <span className="level">{t('skills_level_intermediate')}</span></div>
-              <div className="skill-tag"><span>Excel Avanzado</span> <span className="level">{t('skills_level_advanced')}</span></div>
+              <div className="skill-tag"><span>Excel (Macros & VBA)</span> <span className="level">{t('skills_level_advanced')}</span></div>
             </div>
           </div>
         </div>

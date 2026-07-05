@@ -44,7 +44,7 @@ export const translations = {
             "Auditoría de controles generales de TI (GITCs) incluyendo gestión de cambios, accesos lógicos y operaciones de TI bajo regulaciones SOX y PCAOB.",
             "Evaluación de la seguridad de la información y cumplimiento de controles clave para clientes nacionales y multinacionales.",
             "Auditoría de sistemas operativos (Windows, Linux), bases de datos (SQL, Oracle) y sistemas ERP de gran escala (SAP).",
-            "Uso de herramientas avanzadas como DataSnipper e IDEA Scripting para la automatización de pruebas de auditoría y análisis de datos."
+            "Automatización de pruebas de auditoría, análisis de grandes volúmenes de datos y generación de evidencias mediante macros de Excel con programación en Visual Basic para Aplicaciones (VBA), DataSnipper e IDEA Scripting."
         ],
         exp_bancolombia_role: "Ingeniero de Software Backend",
         exp_bancolombia_date: "Noviembre 2022 - Marzo 2024",
@@ -73,9 +73,10 @@ export const translations = {
         github_forks: "Forks",
         github_repos: "Repositorios Públicos",
         github_featured: "Proyecto Destacado",
-        github_featured_desc: "KPMG Report Manager es una herramienta especializada diseñada para la automatización, procesamiento y generación de reportes e informes de auditoría de TI. Optimiza los tiempos de análisis mediante scripts inteligentes de control de calidad de datos.",
+        github_featured_desc: "KPMG Report Manager es una herramienta especializada diseñada para la automatización, procesamiento y generación de reportes e informes de auditoría de TI. Optimiza los tiempos de análisis mediante scripts inteligentes de control de calidad de datos, macros de Excel (VBA) y modelos de datos de auditoría.",
         github_visit: "Visitar en GitHub",
         github_code: "Ver Código",
+        github_public_title: "Proyectos Públicos",
         
         certs_title: "Credenciales y Certificaciones",
         certs_search_placeholder: "Buscar por nombre, emisor o tecnología...",
@@ -175,7 +176,7 @@ export const translations = {
             "Auditing IT General Controls (GITCs) including change management, logical access, and IT operations under SOX and PCAOB regulations.",
             "Assessing information security compliance and key control effectiveness for domestic and multinational clients.",
             "Auditing operating systems (Windows, Linux), databases (SQL, Oracle), and large-scale ERP systems (SAP).",
-            "Utilizing advanced tools like DataSnipper and IDEA Scripting to automate audit procedures and perform data analysis."
+            "Automating audit procedures, performing large-scale data analysis, and generating audit evidences using Excel macros with Visual Basic for Applications (VBA) programming, DataSnipper, and IDEA Scripting."
         ],
         exp_bancolombia_role: "Backend Software Engineer",
         exp_bancolombia_date: "November 2022 - March 2024",
@@ -204,9 +205,10 @@ export const translations = {
         github_forks: "Forks",
         github_repos: "Public Repositories",
         github_featured: "Featured Project",
-        github_featured_desc: "KPMG Report Manager is a specialized tool designed to automate, process, and generate IT audit reports and logs. It optimizes data evaluation cycles using custom quality-control scripts.",
+        github_featured_desc: "KPMG Report Manager is a specialized tool designed to automate, process, and generate IT audit reports and logs. It optimizes data evaluation cycles using custom quality-control scripts, Excel VBA macros, and audit data models.",
         github_visit: "Visit on GitHub",
         github_code: "View Code",
+        github_public_title: "Public Repositories",
         
         certs_title: "Credentials & Certifications",
         certs_search_placeholder: "Search by name, issuer, or technology...",

@@ -101,10 +101,9 @@ export default function GitHubSection({ addAuditLog, t }) {
         </div>
 
         {/* Repos Grid */}
-        <div className="github-grid">
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
           {/* Featured Project */}
-          <div className="featured-project-card glass-card">
-            <div className="featured-badge">{t('github_featured')}</div>
+          <div className="project-card glass-card featured" style={{ position: 'relative' }}>
             <div className="project-header">
               <svg className="folder" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/>
@@ -132,35 +131,38 @@ export default function GitHubSection({ addAuditLog, t }) {
             </div>
           </div>
 
+          {/* Dynamic Repos Title */}
+          <h3 style={{ fontSize: '1.4rem', marginTop: '20px', marginBottom: '4px', fontFamily: 'var(--font-heading)' }}>
+            {t('github_public_title')}
+          </h3>
+
           {/* Dynamic Repos */}
-          <div className="github-repos-grid-wrapper">
-            <div className="github-repos-grid" id="github-repos-grid">
-              {repos.map(repo => (
-                <div className="project-card glass-card" key={repo.name}>
-                  <div className="project-header">
-                    <svg className="folder" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/>
-                    </svg>
-                    <div className="project-links">
-                      <a href={repo.html_url} target="_blank" rel="noopener noreferrer" aria-label="Github repository link">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                          <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
-                        </svg>
-                      </a>
-                    </div>
-                  </div>
-                  <h3>{repo.name}</h3>
-                  <p>{repo.description || "No description provided."}</p>
-                  <div className="project-footer">
-                    <div className="project-lang">
-                      <span className="lang-dot" style={{ backgroundColor: getLanguageColor(repo.language) }}></span>
-                      <span>{repo.language || "Markdown"}</span>
-                    </div>
-                    <span>★ {repo.stargazers_count}</span>
+          <div className="projects-grid" id="github-repos-grid">
+            {repos.map(repo => (
+              <div className="project-card glass-card" key={repo.name}>
+                <div className="project-header">
+                  <svg className="folder" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/>
+                  </svg>
+                  <div className="project-links">
+                    <a href={repo.html_url} target="_blank" rel="noopener noreferrer" aria-label="Github repository link">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                      </svg>
+                    </a>
                   </div>
                 </div>
-              ))}
-            </div>
+                <h3>{repo.name}</h3>
+                <p>{repo.description || "No description provided."}</p>
+                <div className="project-footer">
+                  <div className="project-lang">
+                    <span className="lang-dot" style={{ backgroundColor: getLanguageColor(repo.language) }}></span>
+                    <span>{repo.language || "Markdown"}</span>
+                  </div>
+                  <span>★ {repo.stargazers_count}</span>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
