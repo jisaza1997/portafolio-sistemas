@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react'
 
 export default function ControlCenter({ logs, addAuditLog, lang, t }) {
   const [activeLightbox, setActiveLightbox] = useState(null)
-  const terminalEndRef = useRef(null)
+  const logsContainerRef = useRef(null)
 
   // TLS Check based on location
   const isHttps = typeof window !== 'undefined' && window.location.protocol === 'https:'
@@ -38,8 +38,11 @@ export default function ControlCenter({ logs, addAuditLog, lang, t }) {
 
   // Autoscroll terminal to bottom when new logs arrive
   useEffect(() => {
-    if (terminalEndRef.current) {
-      terminalEndRef.current.scrollIntoView({ behavior: 'smooth' })
+    if (logsContainerRef.current) {
+      logsContainerRef.current.scrollTo({
+        top: logsContainerRef.current.scrollHeight,
+        behavior: 'smooth'
+      })
     }
   }, [logs])
 
@@ -218,7 +221,7 @@ export default function ControlCenter({ logs, addAuditLog, lang, t }) {
                 </div>
                 <span data-i18n="audit_terminal_header">{t('audit_terminal_header')}</span>
               </div>
-              <div className="terminal-logs" id="terminal-output">
+              <div className="terminal-logs" id="terminal-output" ref={logsContainerRef}>
                 {logs.map((log, index) => (
                   <div className="terminal-line" key={index}>
                     <span className="time">[{log.time}]</span>{' '}
@@ -226,7 +229,6 @@ export default function ControlCenter({ logs, addAuditLog, lang, t }) {
                     <span>{log.message}</span>
                   </div>
                 ))}
-                <div ref={terminalEndRef} />
               </div>
               <div className="terminal-input-wrapper">
                 <span style={{ color: 'var(--accent-primary)', fontSize: '0.85rem', marginRight: '6px', fontFamily: 'monospace', fontWeight: 600 }}>guest@audit-cli:~$</span>
