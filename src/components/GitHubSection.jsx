@@ -131,6 +131,44 @@ export default function GitHubSection({ addAuditLog, t }) {
             </div>
           </div>
 
+          {/* Private Projects Title */}
+          <div style={{ marginTop: '32px', marginBottom: '16px' }}>
+            <h3 style={{ fontSize: '1.4rem', marginBottom: '8px', fontFamily: 'var(--font-heading)' }}>
+              {t('private_projects_title')}
+            </h3>
+            <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', background: 'rgba(239, 68, 68, 0.05)', padding: '12px 16px', borderRadius: '8px', border: '1px solid rgba(239, 68, 68, 0.15)', lineHeight: 1.4 }}>
+              {t('private_projects_note')}
+            </p>
+          </div>
+
+          {/* Private Projects Grid */}
+          <div className="projects-grid" style={{ marginBottom: '32px' }}>
+            {Array.isArray(t('private_projects')) && t('private_projects').map((proj, idx) => (
+              <div className="project-card glass-card" key={idx}>
+                <div className="project-header">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="24" height="24" style={{ color: 'var(--accent-secondary)' }}>
+                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                  </svg>
+                  <div className="project-links">
+                    <a href="#contact" className="badge" style={{ borderColor: 'var(--accent-primary)', color: 'var(--accent-primary)', padding: '4px 8px', fontSize: '0.7rem', fontWeight: 600 }}>
+                      {t('private_project_demo_btn')} &rarr;
+                    </a>
+                  </div>
+                </div>
+                <h3>{proj.name}</h3>
+                <p>{proj.desc}</p>
+                <div className="project-footer">
+                  <div className="project-lang">
+                    <span className="lang-dot" style={{ backgroundColor: 'var(--accent-secondary)' }}></span>
+                    <span>{proj.tech}</span>
+                  </div>
+                  <span style={{ fontSize: '0.75rem', fontWeight: 600, color: 'var(--text-muted)' }}>{proj.visual}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+
           {/* Dynamic Repos Title */}
           <h3 style={{ fontSize: '1.4rem', marginTop: '20px', marginBottom: '4px', fontFamily: 'var(--font-heading)' }}>
             {t('github_public_title')}

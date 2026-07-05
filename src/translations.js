@@ -130,7 +130,43 @@ export const translations = {
         modal_date: "Fecha de Finalización",
         modal_issuer: "Entidad Emisora",
         modal_verification: "Código/Archivo de Evidencia",
-        modal_close_btn: "Cerrar"
+        modal_close_btn: "Cerrar",
+        
+        private_projects_title: "Proyectos Privados y Automatizaciones Corporativas (Entorno Local)",
+        private_projects_note: "🔒 Por motivos de acuerdos de confidencialidad (NDA) y seguridad, el código de estos proyectos corporativos es privado. Demostraciones prácticas y revisiones de código están disponibles bajo solicitud mediante sesión compartida de pantalla.",
+        private_project_demo_btn: "Solicitar Demo",
+        private_projects: [
+            {
+                name: "AI Audit Assistant (MCP Server)",
+                desc: "Servidor local bajo protocolo MCP que integra modelos LLM con bases de datos para automatizar el análisis de cumplimiento y riesgos de infraestructura.",
+                tech: "TypeScript / Node.js / MCP / Python",
+                visual: "Sesión compartida segura (Teams/Meet)"
+            },
+            {
+                name: "Automated Evidence Compiler",
+                desc: "Macros estructuradas en VBA combinadas con scripts de Python para extraer, cruzar y documentar automáticamente bitácoras de SAP y bases de datos.",
+                tech: "Excel VBA / Python / Pandas / SQL",
+                visual: "Sesión compartida segura (Teams/Meet)"
+            },
+            {
+                name: "Secure Secrets Rotator & Provisioner",
+                desc: "Automatización en TypeScript para aprovisionar recursos locales y rotar credenciales sensibles de base de datos con registro encriptado.",
+                tech: "TypeScript / MongoDB / Node.js / Cryptography",
+                visual: "Sesión compartida segura (Teams/Meet)"
+            },
+            {
+                name: "Multi-Database Compliance Validator",
+                desc: "Herramienta que escanea y audita esquemas de bases de datos relacionales (Oracle/SQL) y NoSQL (MongoDB) para validar controles de segregación de funciones (SoD).",
+                tech: "TypeScript / Python / MongoDB / Oracle",
+                visual: "Sesión compartida segura (Teams/Meet)"
+            },
+            {
+                name: "AI Agent for Security Policy Audits",
+                desc: "Agente autónomo local que realiza análisis de brechas de cumplimiento (gap analysis) comparando configuraciones activas contra la norma ISO 27001.",
+                tech: "TypeScript / LangChain / OpenAI API / Python",
+                visual: "Sesión compartida segura (Teams/Meet)"
+            }
+        ]
     },
     en: {
         nav_about: "About Me",
@@ -263,6 +299,42 @@ export const translations = {
         modal_date: "Date Completed",
         modal_issuer: "Issuing Entity",
         modal_verification: "Evidence File Code",
-        modal_close_btn: "Close"
+        modal_close_btn: "Close",
+        
+        private_projects_title: "Private Projects & Corporate Automations (Local)",
+        private_projects_note: "🔒 Due to Non-Disclosure Agreements (NDAs) and security reasons, the code for these projects is private. Live code walkthroughs and product demonstrations are available upon request via secure screen-sharing sessions.",
+        private_project_demo_btn: "Request Demo",
+        private_projects: [
+            {
+                name: "AI Audit Assistant (MCP Server)",
+                desc: "Local server using Model Context Protocol (MCP) to safely connect LLMs to technology layers to run automated security audits.",
+                tech: "TypeScript / Node.js / MCP / Python",
+                visual: "Secure screen-share session (Teams/Meet)"
+            },
+            {
+                name: "Automated Evidence Compiler",
+                desc: "Structured Excel VBA macros linked with Python engines to pull, reconcile, and format SAP and database logs into clean audit evidence.",
+                tech: "Excel VBA / Python / Pandas / SQL",
+                visual: "Secure screen-share session (Teams/Meet)"
+            },
+            {
+                name: "Secure Secrets Rotator & Provisioner",
+                desc: "TypeScript and CLI automation to provision local resources and rotate sensitive database access tokens with an encrypted ledger.",
+                tech: "TypeScript / MongoDB / Node.js / Cryptography",
+                visual: "Secure screen-share session (Teams/Meet)"
+            },
+            {
+                name: "Multi-Database Compliance Validator",
+                desc: "Audit scanning tool connecting to relational SQL databases and NoSQL MongoDB to validate Segregation of Duties (SoD) policies.",
+                tech: "TypeScript / Python / MongoDB / Oracle",
+                visual: "Secure screen-share session (Teams/Meet)"
+            },
+            {
+                name: "AI Agent for Security Policy Audits",
+                desc: "Autonomous local agent parsing server logs and configuration files to report automated gap analysis measured against ISO 27001 controls.",
+                tech: "TypeScript / LangChain / OpenAI API / Python",
+                visual: "Secure screen-share session (Teams/Meet)"
+            }
+        ]
     }
 };
