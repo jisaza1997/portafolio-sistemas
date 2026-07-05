@@ -10,7 +10,7 @@ export const translations = {
         
         hero_greet: "Hola, mi nombre es",
         hero_tagline: "Protegiendo e impulsando la infraestructura tecnológica del futuro.",
-        hero_desc: "Ingeniero de Sistemas y Auditor de TI en KPMG Colombia. Especialista en desarrollo backend seguro (Python, TypeScript), bases de datos (SQL, MongoDB) y auditoría tecnológica (SOX/ISO 27001). Con conocimientos avanzados en la integración de Inteligencia Artificial (Agentes Autónomos, protocolos MCP) y la automatización avanzada de procesos con Python y macros de Excel (VBA).",
+        hero_desc: "Ingeniero de Sistemas egresado del Área Andina y Auditor de TI en KPMG Colombia. Especialista en desarrollo backend seguro (Python, TypeScript), bases de datos (SQL, MongoDB) y auditoría tecnológica (SOX/ISO 27001). Con conocimientos avanzados en la integración de Inteligencia Artificial (Agentes Autónomos, protocolos MCP) y la automatización avanzada de procesos con Python y macros de Excel (VBA).",
         hero_cta_portfolio: "Ver Portafolio",
         hero_cta_contact: "Contáctame",
         
@@ -143,7 +143,7 @@ export const translations = {
         
         hero_greet: "Hi, my name is",
         hero_tagline: "Securing and empowering the technological infrastructure of the future.",
-        hero_desc: "Systems Engineer and IT Auditor at KPMG Colombia. Specializing in secure backend development (Python, TypeScript), database management (SQL, MongoDB), and tech auditing (SOX/ISO 27001). With advanced proficiency in Artificial Intelligence integration (Autonomous Agents, MCP protocols) and advanced process automation with Python and Excel macros (VBA).",
+        hero_desc: "Systems Engineer graduated from Área Andina and IT Auditor at KPMG Colombia. Specializing in secure backend development (Python, TypeScript), database management (SQL, MongoDB), and tech auditing (SOX/ISO 27001). With advanced proficiency in Artificial Intelligence integration (Autonomous Agents, MCP protocols) and advanced process automation with Python and Excel macros (VBA).",
         hero_cta_portfolio: "View Portfolio",
         hero_cta_contact: "Contact Me",
         
