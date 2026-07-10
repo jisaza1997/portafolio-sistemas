@@ -23,10 +23,10 @@ export default function CyberBackground({ theme }) {
 
     // Dynamic color selection based on theme
     const getParticleColor = () => {
-      // Return RGB values so we can draw lines with variable opacity
+      // Return RGB values so we can draw lines with variable opacity (Electric Indigo theme)
       return theme === 'light' 
-        ? { r: 6, g: 124, b: 219 } // Royal Blue
-        : { r: 23, g: 190, b: 230 } // Cyber Cyan
+        ? { r: 109, g: 40, b: 217 } // Deep Royal Violet
+        : { r: 124, g: 58, b: 237 } // Electric Violet
     }
 
     // Limit particles for performance (especially on mobile)

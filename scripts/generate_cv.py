@@ -27,7 +27,7 @@ def build_pdf(filename, lang="es"):
     
     # Custom colors
     c_primary = colors.HexColor("#0f172a")   # Slate 900 (Dark Navy)
-    c_secondary = colors.HexColor("#0284c7") # Sky 600 (Cyan Accent)
+    c_secondary = colors.HexColor("#6366f1") # Electric Violet/Indigo Accent
     c_text = colors.HexColor("#334155")      # Slate 700 (Body text)
     c_muted = colors.HexColor("#64748b")     # Slate 500
     
