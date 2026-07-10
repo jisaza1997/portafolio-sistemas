@@ -592,5 +592,32 @@
       "Risk Assessment"
     ],
     "filename": "SuccessFactors Learning_ Content Player for GX_USAS 2023 IT Audit update.pdf"
+  },
+  {
+    "id": "seguridad_informtica_defensa_c_25",
+    "title_es": "Seguridad informática: defensa contra las artes oscuras digitales",
+    "title_en": "Seguridad informática: defensa contra las artes oscuras digitales",
+    "issuer": "Coursera (Google)",
+    "date": "Jun 27, 2021",
+    "category": "coursera",
+    "skills": [
+      "Cybersecurity",
+      "Security Controls",
+      "Information Security"
+    ],
+    "filename": "Coursera AJ94NRQMH6CW.pdf"
+  },
+  {
+    "id": "contabilidad_para_no_contadore_25",
+    "title_es": "Contabilidad para no contadores",
+    "title_en": "Contabilidad para no contadores",
+    "issuer": "Coursera (Universidad Nacional Autónoma de México)",
+    "date": "Jun 18, 2021",
+    "category": "coursera",
+    "skills": [
+      "Technical Training",
+      "Process Compliance"
+    ],
+    "filename": "Coursera ZJ6ZNMXJJNBR.pdf"
   }
 ]

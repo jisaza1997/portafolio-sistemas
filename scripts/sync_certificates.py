@@ -8,7 +8,21 @@ certs_dir = r"public/Certificaciones"
 json_path = "public/certifications.json"
 
 def clean_spacing(text):
-    return " ".join(text.split())
+    # Detect if character-spaced (single letters separated by single spaces, double spaces separating words)
+    lines = text.split("\n")
+    cleaned_lines = []
+    for line in lines:
+        if not line.strip():
+            continue
+        words = line.split()
+        if len(words) > 4:
+            single_letter_count = sum(1 for w in words if len(w) == 1)
+            if (single_letter_count / len(words)) > 0.6:
+                # Reconstruct spaced text: split by double space and strip spacing
+                line_words = [w.replace(" ", "") for w in line.split("  ") if w.strip()]
+                line = " ".join(line_words)
+        cleaned_lines.append(line)
+    return " ".join(cleaned_lines)
 
 def parse_pdf_content(filepath, filename):
     """
@@ -38,31 +52,34 @@ def parse_pdf_content(filepath, filename):
 
         # 1. Platform Detection
         # -- COURSERA --
-        if "coursera" in clean_text.lower():
+        if "coursera" in clean_text.lower() or "coursera" in filename.lower():
             category = "coursera"
             issuer = "Coursera"
             
-            # Try to identify offering organization (e.g. "offered by IBM", "offered by Google")
-            org_match = re.search(r"offered by\s+([\w\s&,\.\-]+?)(?:\ban\b|has successfully|authorized by)", clean_text)
+            # Try to identify offering organization (e.g. "autorizado por Google", "offered by IBM")
+            org_match = re.search(r"(?:autorizado por|offered by)\s+([\w\s&,\.\-áéíóúüñÁÉÍÓÚÜÑ]+?)(?:\by ofrecido\b|\ban\b|has successfully|authorized by)", clean_text)
             if org_match:
                 offering_org = org_match.group(1).strip()
                 issuer = f"Coursera ({offering_org})"
             else:
-                issuer = "Coursera (Bancolombia Program)"
+                issuer = "Coursera (Google/IBM Program)"
                 
-            # Try to extract Coursera Course Title
-            # Patterns: "successfully completed [Title] an online", "completed [Title] a course"
-            title_match = re.search(r"successfully completed\s+([\w\s:,\-\(\)\!\.\#\&\/]+?)(?:\ban\b\s+online|a course|a \d+-week|offered by)", clean_text)
+            # Try to extract Coursera Course Title (Spanish or English)
+            title_match = re.search(r"(?:JULIAN ANDRES ISAZA ARIAS|Julián Andrés Isaza Arias)\s+([\w\s:,\-\(\)\!\.\#\&\/áéíóúüñÁÉÍÓÚÜÑ¿?¡!]+?)\s+(?:un curso en línea|successfully completed|a course|a \d+-week|offered by)", clean_text)
             if title_match:
                 title_en = title_match.group(1).strip()
-                title_es = title_en  # Coursera titles are usually in English
-            else:
-                # Fallback: take file name as title
-                clean_name = filename.replace(".pdf", "").replace("_", " ").replace("-", " ")
-                title_en = clean_name.title()
                 title_es = title_en
+            else:
+                title_match = re.search(r"successfully completed\s+([\w\s:,\-\(\)\!\.\#\&\/]+?)(?:\ban\b\s+online|a course)", clean_text)
+                if title_match:
+                    title_en = title_match.group(1).strip()
+                    title_es = title_en
+                else:
+                    clean_name = filename.replace(".pdf", "").replace("Coursera ", "").replace("_", " ").replace("-", " ")
+                    title_en = clean_name.title()
+                    title_es = title_en
 
-            # Extract Coursera Date: typically "December 15, 2024" or "Month DD, YYYY"
+            # Extract Coursera Date
             date_match = re.search(r"\b([A-Za-z]+ \d{1,2}, \d{4})\b", clean_text)
             if date_match:
                 date_str = date_match.group(1)
