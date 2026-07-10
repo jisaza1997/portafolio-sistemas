@@ -6,6 +6,56 @@ export default function Certifications({ onCertsLoaded, addAuditLog, lang, t }) 
   const [searchQuery, setSearchQuery] = useState('')
   const [hoveredSegment, setHoveredSegment] = useState(null)
   const [selectedCert, setSelectedCert] = useState(null)
+  const [isUnlocked, setIsUnlocked] = useState(false)
+  const [accessCode, setAccessCode] = useState('')
+  const [reqName, setReqName] = useState('')
+  const [reqEmail, setReqEmail] = useState('')
+  const [reqCompany, setReqCompany] = useState('')
+  const [reqSuccess, setReqSuccess] = useState(false)
+
+  // Load unlock state from localStorage
+  useEffect(() => {
+    const unlocked = localStorage.getItem('certs-unlocked') === 'true'
+    if (unlocked) {
+      setIsUnlocked(true)
+    }
+  }, [])
+
+  // Handle email request trigger
+  const handleSendRequest = (e) => {
+    e.preventDefault()
+    const subject = encodeURIComponent(`Solicitud de Acceso a Certificado - ${reqName}`)
+    const body = encodeURIComponent(
+      `Hola Julián,\n\n` +
+      `Deseo solicitar acceso para visualizar tu certificado/acta de grado en tu portafolio.\n\n` +
+      `Detalles del Solicitante:\n` +
+      `- Nombre: ${reqName}\n` +
+      `- Correo: ${reqEmail}\n` +
+      `- Empresa/Motivo: ${reqCompany}\n` +
+      `- Certificado de interés: ${selectedCert ? selectedCert.title_en : 'General'} (${selectedCert ? selectedCert.filename : ''})\n\n` +
+      `Por favor envíame el código de aprobación.\n\n` +
+      `Saludos.`
+    )
+    window.location.href = `mailto:julianandresisazaarias7@gmail.com?subject=${subject}&body=${body}`
+    setReqSuccess(true)
+    addAuditLog("SECURITY_REQUEST", `Access request initiated by ${reqName} (${reqEmail}) for: ${selectedCert ? selectedCert.filename : ''}`)
+  }
+
+  // Validate Code
+  const handleValidateCode = () => {
+    const code = accessCode.trim().toUpperCase()
+    // Pre-authorized access key codes
+    const approvedCodes = ["JULIAN-ACCESS-2026", "KPMG-AUDIT-ACCESS", "SECURE-VIEW-99", "JULIAN-ACCESS-APPROVED"]
+    if (approvedCodes.includes(code)) {
+      setIsUnlocked(true)
+      localStorage.setItem('certs-unlocked', 'true')
+      addAuditLog("SECURITY_GRANTED", `Passcode '${code}' verified. All certificates unlocked.`)
+      alert(lang === 'es' ? "¡Acceso concedido! Los documentos han sido desbloqueados." : "Access granted! Documents unlocked successfully.")
+    } else {
+      addAuditLog("SECURITY_DENIED", `Passcode '${code}' failed validation. Access denied.`)
+      alert(lang === 'es' ? "Código de acceso inválido o rechazado." : "Invalid or rejected access code.")
+    }
+  }
 
   // Load certifications database
   useEffect(() => {
@@ -303,8 +353,77 @@ export default function Certifications({ onCertsLoaded, addAuditLog, lang, t }) 
                 </div>
               </div>
               
-              <div className="modal-btn-wrapper" style={{ display: 'flex', gap: '12px', marginTop: '10px' }}>
-                {selectedCert.filename ? (
+              {/* Access Control Gate Annex A.9 */}
+              {!isUnlocked && selectedCert.filename ? (
+                <div style={{ background: 'rgba(239, 68, 68, 0.04)', border: '1px dashed rgba(255, 255, 255, 0.1)', padding: '16px', borderRadius: '8px', marginTop: '16px' }}>
+                  <h4 style={{ fontSize: '0.95rem', marginBottom: '8px', color: 'var(--accent-secondary)', fontWeight: 700 }}>
+                    {t('certs_locked_title')}
+                  </h4>
+                  <p style={{ fontSize: '0.78rem', color: 'var(--text-secondary)', lineHeight: '1.45', marginBottom: '16px' }}>
+                    {t('certs_locked_desc')}
+                  </p>
+                  
+                  {reqSuccess ? (
+                    <div style={{ color: 'var(--accent-primary)', fontSize: '0.8rem', marginBottom: '16px', background: 'rgba(99, 102, 241, 0.08)', padding: '10px', borderRadius: '4px', border: '1px solid rgba(99, 102, 241, 0.2)' }}>
+                      {t('certs_request_success')}
+                    </div>
+                  ) : (
+                    <form onSubmit={handleSendRequest} style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginBottom: '16px' }}>
+                      <input 
+                        type="text" 
+                        placeholder={lang === 'es' ? "Tu Nombre Completo" : "Your Full Name"} 
+                        value={reqName} 
+                        onChange={(e) => setReqName(e.target.value)} 
+                        required 
+                        style={{ background: 'rgba(0,0,0,0.3)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '4px', padding: '6px 10px', fontSize: '0.8rem', color: '#fff', outline: 'none' }}
+                      />
+                      <input 
+                        type="email" 
+                        placeholder={lang === 'es' ? "Tu Correo Electrónico" : "Your Email Address"} 
+                        value={reqEmail} 
+                        onChange={(e) => setReqEmail(e.target.value)} 
+                        required 
+                        style={{ background: 'rgba(0,0,0,0.3)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '4px', padding: '6px 10px', fontSize: '0.8rem', color: '#fff', outline: 'none' }}
+                      />
+                      <input 
+                        type="text" 
+                        placeholder={lang === 'es' ? "Empresa / Motivo de consulta" : "Company / Viewing Reason"} 
+                        value={reqCompany} 
+                        onChange={(e) => setReqCompany(e.target.value)} 
+                        required 
+                        style={{ background: 'rgba(0,0,0,0.3)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '4px', padding: '6px 10px', fontSize: '0.8rem', color: '#fff', outline: 'none' }}
+                      />
+                      <button 
+                        type="submit" 
+                        className="btn btn-primary" 
+                        style={{ fontSize: '0.8rem', padding: '8px 12px', background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.12)', color: '#fff' }}
+                      >
+                        {t('certs_request_btn')}
+                      </button>
+                    </form>
+                  )}
+
+                  {/* Passcode Input */}
+                  <div style={{ display: 'flex', gap: '8px', borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '16px' }}>
+                    <input 
+                      type="text" 
+                      placeholder={t('certs_code_placeholder')} 
+                      value={accessCode} 
+                      onChange={(e) => setAccessCode(e.target.value)}
+                      style={{ flex: 1, background: 'rgba(0,0,0,0.4)', border: '1px solid var(--accent-primary)', borderRadius: '4px', padding: '6px 10px', fontSize: '0.8rem', color: 'var(--accent-primary)', fontFamily: 'monospace', outline: 'none' }}
+                    />
+                    <button 
+                      onClick={handleValidateCode}
+                      style={{ background: 'var(--accent-primary)', color: '#000', border: 'none', borderRadius: '4px', padding: '0 12px', fontSize: '0.8rem', fontWeight: 600, cursor: 'pointer' }}
+                    >
+                      {lang === 'es' ? "Desbloquear" : "Unlock"}
+                    </button>
+                  </div>
+                </div>
+              ) : null}
+              
+              <div className="modal-btn-wrapper" style={{ display: 'flex', gap: '12px', marginTop: '20px' }}>
+                {isUnlocked && selectedCert.filename ? (
                   <a 
                     id="modal-cert-download-link" 
                     href={getCertPdfUrl(selectedCert.filename)} 

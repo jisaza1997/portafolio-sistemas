@@ -181,7 +181,14 @@ export const translations = {
         script_sync_title: "sync_certificates.py",
         script_sync_desc: "Escanea de manera heurística los PDFs de certificación para extraer su emisor, fecha y habilidades, actualizando la base local.",
         script_db_title: "sync_to_supabase.py",
-        script_db_desc: "Realiza un upsert seguro del inventario JSON a la base de datos de Supabase PostgreSQL a través de su API Rest con tokens autorizados."
+        script_db_desc: "Realiza un upsert seguro del inventario JSON a la base de datos de Supabase PostgreSQL a través de su API Rest con tokens autorizados.",
+        
+        certs_locked_title: "🔒 Acceso Restringido - Control de Acceso A.9",
+        certs_locked_desc: "Por políticas de seguridad de la información (ISO 27001) y privacidad, las evidencias de certificados y actas de grado requieren autorización previa. Solicita el código de acceso o ingrésalo a continuación si ya dispones de uno.",
+        certs_request_btn: "Solicitar Acceso por Correo",
+        certs_code_placeholder: "Ingresa el código (Ej: JULIAN-ACCESS-2026)",
+        certs_code_btn: "Desbloquear Documento",
+        certs_request_success: "¡Solicitud generada! Si el formulario automático no abre tu cliente de correo, por favor envía un mensaje a julianandresisazaarias7@gmail.com solicitando tu código."
     },
     en: {
         nav_about: "About Me",
@@ -365,6 +372,13 @@ export const translations = {
         script_sync_title: "sync_certificates.py",
         script_sync_desc: "Heuristically parses PDF certificates, extracting issuer, date, and tech skill metadata to output the local JSON db.",
         script_db_title: "sync_to_supabase.py",
-        script_db_desc: "Performs a secure bulk upsert of certifications.json to the cloud Supabase Postgres database using API bearer tokens."
+        script_db_desc: "Performs a secure bulk upsert of certifications.json to the cloud Supabase Postgres database using API bearer tokens.",
+        
+        certs_locked_title: "🔒 Restricted Access - Access Control A.9",
+        certs_locked_desc: "Due to information security (ISO 27001) and privacy regulations, certificate files and graduation degrees require authorization. Request a passcode or enter one below if you already have it.",
+        certs_request_btn: "Request Access via Email",
+        certs_code_placeholder: "Enter access passcode (e.g. JULIAN-ACCESS-2026)",
+        certs_code_btn: "Unlock Document",
+        certs_request_success: "Request prepared! If the automatic client doesn't open, please send an email to julianandresisazaarias7@gmail.com requesting your code."
     }
 };
