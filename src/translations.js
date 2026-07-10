@@ -166,7 +166,22 @@ export const translations = {
                 tech: "TypeScript / LangChain / OpenAI API / Python",
                 visual: "Sesión compartida segura (Teams/Meet)"
             }
-        ]
+        ],
+        
+        automation_title: "Gestor de Automatizaciones de la Plataforma",
+        automation_subtitle: "Herramientas de Automatización",
+        automation_desc: "Visualiza el código fuente e interactúa con los scripts en Python diseñados para optimizar el mantenimiento y el despliegue del portafolio.",
+        automation_btn_view: "Ver Código",
+        automation_btn_run: "Simular Script",
+        automation_running: "Ejecutando...",
+        automation_close: "Cerrar",
+        
+        script_cv_title: "generate_cv.py",
+        script_cv_desc: "Compila y maqueta dinámicamente tu hoja de vida y perfil profesional en formato PDF en español e inglés usando ReportLab.",
+        script_sync_title: "sync_certificates.py",
+        script_sync_desc: "Escanea de manera heurística los PDFs de certificación para extraer su emisor, fecha y habilidades, actualizando la base local.",
+        script_db_title: "sync_to_supabase.py",
+        script_db_desc: "Realiza un upsert seguro del inventario JSON a la base de datos de Supabase PostgreSQL a través de su API Rest con tokens autorizados."
     },
     en: {
         nav_about: "About Me",
@@ -335,6 +350,21 @@ export const translations = {
                 tech: "TypeScript / LangChain / OpenAI API / Python",
                 visual: "Secure screen-share session (Teams/Meet)"
             }
-        ]
+        ],
+        
+        automation_title: "Platform Automation Manager",
+        automation_subtitle: "Automation Tools",
+        automation_desc: "Inspect the source code and simulate execution of the custom Python scripts engineered to maintain and automate this portfolio website.",
+        automation_btn_view: "View Source",
+        automation_btn_run: "Simulate Script",
+        automation_running: "Running...",
+        automation_close: "Close",
+        
+        script_cv_title: "generate_cv.py",
+        script_cv_desc: "Compiles and dynamically layouts professional resumes in PDF format in both English and Spanish using ReportLab.",
+        script_sync_title: "sync_certificates.py",
+        script_sync_desc: "Heuristically parses PDF certificates, extracting issuer, date, and tech skill metadata to output the local JSON db.",
+        script_db_title: "sync_to_supabase.py",
+        script_db_desc: "Performs a secure bulk upsert of certifications.json to the cloud Supabase Postgres database using API bearer tokens."
     }
 };
