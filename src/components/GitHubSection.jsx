@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 
 export default function GitHubSection({ addAuditLog, t }) {
   const [repos, setRepos] = useState([])
-  const [stats, setStats] = useState({ publicRepos: 12, followers: 18 }) // Good realistic defaults
+  const [stats, setStats] = useState({ publicRepos: 1, followers: 0 }) // Good realistic defaults
   const [loading, setLoading] = useState(true)
 
   const username = "jisaza1997"
@@ -22,18 +22,11 @@ export default function GitHubSection({ addAuditLog, t }) {
 
   const fallbacks = [
     {
-      name: "backend-security-checks",
-      html_url: `https://github.com/${username}/backend-security-checks`,
-      description: "Middleware tools for auditing OWASP configurations and token validations in Python/Flask backend applications.",
-      language: "Python",
-      stargazers_count: 3
-    },
-    {
-      name: "db-audit-tool",
-      html_url: `https://github.com/${username}/db-audit-tool`,
-      description: "Database schema compliance verifier. Scans structures to confirm segregation of duties (SoD) compliance.",
-      language: "Go",
-      stargazers_count: 2
+      name: "portafolio-sistemas",
+      html_url: `https://github.com/${username}/portafolio-sistemas`,
+      description: "Portafolio interactivo de Auditoría de TI e Ingeniería de Sistemas. Integra tableros de control de automatización de scripts e ISO 27001.",
+      language: "JavaScript",
+      stargazers_count: 1
     }
   ]
 
